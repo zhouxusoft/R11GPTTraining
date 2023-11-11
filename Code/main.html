@@ -88,12 +88,38 @@
         .whitebox2 {
             height: 80px;
         }
+
+        .userinfo {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            padding: 0 1vw;
+        }
+
+        .userinfoicon {
+            width: 20px;
+        }
+
+        .userinfoname {
+            margin-right: 0.25vw;
+            color: rgb(220, 220, 220);
+        }
+        
+        .userinfodown {
+            margin-right: 1vw;
+            width: 16px;
+        }
     </style>
 </head>
 
 <body>
     <div class="nav">
         <div class="softnametitle"></div>
+        <div class="userinfo">
+            <div class="userinfoname">Admin</div>
+            <img src="./icons/caret-down.svg" class="userinfodown">
+            <img src="./icons/user.svg" class="userinfoicon">
+        </div>
     </div>
     <div class="container">
         <div class="leftnav">
