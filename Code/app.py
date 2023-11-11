@@ -18,9 +18,34 @@ with open('config.json', 'r', encoding='utf-8') as f:
     config_data = json.load(f)
 
 # 修改 config.json 字段 中的内容
-config_data['user_info_name'] = user_info_name
+config_data['soft_name'] = '电子图书设计平台'
+config_data['module_list'] = [
+    "图书管理",
+    "用户管理",
+    "分类管理",
+    "借阅管理",
+    "排名统计",
+    "评论管理",
+    "图书推荐",
+    "阅读器功能",
+    "书签管理",
+    "收藏夹",
+    "搜索功能",
+    "图书详情",
+    "历史记录",
+    "在线阅读",
+    "书评功能",
+    "借阅规则",
+    "购买功能",
+    "缓存管理",
+    "用户反馈",
+    "数据备份与恢复"
+]
 config_data['top_nav_color'] = nav_color_group[0]
 config_data['left_nav_color'] = nav_color_group[1]
+config_data['menu_icon_file_name'] = 'menu.svg'
+config_data['user_info_name'] = user_info_name
+
 
 
 # 将修改后的内容写回 config.json 文件中

@@ -9,11 +9,12 @@
 - 将 Code/config_example.json，改为 config.json
 
 - 在 Code/config.json 中配置
-  - 软件名称
-  - 功能模块列表
-  - 顶部导航栏颜色
-  - 侧边导航栏颜色
-  - 侧边菜单图标
+  - 软件名称 `可在 app.py 中配置`
+  - 功能模块列表  `可在 app.py 中配置`
+  - 顶部导航栏颜色 ` 运行 app.py 可自动随机获取`
+  - 侧边导航栏颜色 ` 运行 app.py 可自动随机获取`
+  - 侧边菜单图标 ` 运行 app.py 可自动随机获取`
+  - 导航左上角用户名  ` 运行 app.py 可自动获取`
 
 - 在 Code/html 文件夹中，放置 html 代码
   - 以 0.html、1.html... 命名
