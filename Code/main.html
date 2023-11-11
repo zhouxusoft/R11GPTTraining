@@ -98,10 +98,6 @@
     <div class="container">
         <div class="leftnav">
             <div class="menulist">
-                <div class="menuitem" id="menuitem0">
-                    <img src="./icons/menu.svg" class="menuicon">
-                    <div class="menuname">图书发布</div>
-                </div>
             </div>
         </div>
         <div class="mainmodule">
@@ -127,15 +123,15 @@
             })
             .catch(error => {
                 console.error('读取配置文件时出错:', error);
-            });
+            })
         function setLeftNav() {
             for (let i = 0; i < modulelist.length; i++) {
                 modulelist[i] = modulelist[i].replace('模块', '')
             }
-            document.title = softname
             const softnametitle = document.getElementsByClassName('softnametitle')[0]
-            softnametitle.innerHTML = softname
             const menulist = document.getElementsByClassName('menulist')[0]
+            document.title = softname
+            softnametitle.innerHTML = softname
             menulist.innerHTML = ''
             menulist.innerHTML += '<div class="whitebox"></div>'
             for (let i = 0; i < modulelist.length; i++) {
@@ -169,8 +165,8 @@
             }
             menuitem[currentpage].classList.add('active')
             const nav = document.getElementsByClassName("nav")[0]
-            nav.style.backgroundColor = topnavcolor
             const leftnav = document.getElementsByClassName("leftnav")[0]
+            nav.style.backgroundColor = topnavcolor
             leftnav.style.backgroundColor = leftnavcolor
             const styleElement = document.createElement('style');
             const cssRule = `.active { background-color: ${topnavcolor};}
