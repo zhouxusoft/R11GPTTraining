@@ -1,8 +1,13 @@
 import json
+import random
 
 # 打开 config.json 文件并读取内容
 with open('config.json', 'r', encoding='utf-8') as f:
     config_data = json.load(f)
+
+
+random_number = random.randint(0, 119)
+print(random_number)
 
 # 修改 字段 中的内容
 config_data['menu_icon_file_name'] = 'menu-4.svg'

@@ -137,6 +137,7 @@
         let topnavcolor = ''
         let leftnavcolor = ''
         let menuiconfilename = ''
+        let username = ''
         fetch('./config.json')
             .then(response => response.json())
             .then(data => {
@@ -145,6 +146,7 @@
                 topnavcolor = data.top_nav_color
                 leftnavcolor = data.left_nav_color
                 menuiconfilename = data.menu_icon_file_name
+                username = data.user_info_name
                 setLeftNav()
             })
             .catch(error => {
@@ -192,8 +194,10 @@
             menuitem[currentpage].classList.add('active')
             const nav = document.getElementsByClassName("nav")[0]
             const leftnav = document.getElementsByClassName("leftnav")[0]
+            const userinfoname = document.getElementsByClassName("userinfoname")[0]
             nav.style.backgroundColor = topnavcolor
             leftnav.style.backgroundColor = leftnavcolor
+            userinfoname.innerHTML = username
             const styleElement = document.createElement('style');
             const cssRule = `.active { background-color: ${topnavcolor};}
                              .menuitem:hover { background-color: ${topnavcolor};}`

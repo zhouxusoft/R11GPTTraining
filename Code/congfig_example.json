@@ -3,5 +3,6 @@
     "module_list": [],
     "top_nav_color": "#24648F",
     "left_nav_color": "#6290AF",
-    "menu_icon_file_name": "menu.svg"
+    "menu_icon_file_name": "menu.svg",
+    "user_info_name": "Admin"
 }
