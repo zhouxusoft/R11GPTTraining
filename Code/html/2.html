@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>图书借阅模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 40px;
+}
+h1 {
+text-align: center;
+}
+.form-container {
+width: 500px;
+margin: 0 auto;
+}
+.form-group {
+margin-bottom: 20px;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 10px;
+}
+input[type="text"],
+input[type="number"] {
+width: 100%;
+padding: 5px;
+font-size: 16px;
+}
+.btn {
+padding: 10px 20px;
+font-size: 16px;
+background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+}
+.btn:hover {
+background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<h1>图书借阅模块</h1>
+<div class="form-container">
+<form id="borrow-form" action="" method="POST">
+<div class="form-group">
+<label for="book-name">图书名称：</label>
+<input type="text" id="book-name" name="book-name" value="虚构的图书名称" required>
+</div>
+<div class="form-group">
+<label for="user-id">用户ID：</label>
+<input type="text" id="user-id" name="user-id" value="虚构的用户ID" required>
+</div>
+<div class="form-group">
+<label for="borrow-date">借阅日期：</label>
+<input type="date" id="borrow-date" name="borrow-date" required>
+</div>
+<div class="form-group">
+<label for="return-date">归还日期：</label>
+<input type="date" id="return-date" name="return-date" required>
+</div>
+<div class="form-group">
+<label for="status">借阅状态：</label>
+<select id="status" name="status" required>
+<option value="借出">借出</option>
+<option value="归还">归还</option>
+</select>
+</div>
+<div class="form-group">
+<label for="comments">备注：</label>
+<textarea id="comments" name="comments" rows="4" cols="30"></textarea>
+</div>
+<div class="form-group">
+<input type="submit" value="借阅" class="btn">
+</div>
+</form>
+</div>
+<script>
+document.getElementById("borrow-form").addEventListener("submit", function(e) {
+e.preventDefault();
+var bookName = document.getElementById("book-name").value;
+var userId = document.getElementById("user-id").value;
+var borrowDate = document.getElementById("borrow-date").value;
+var returnDate = document.getElementById("return-date").value;
+var status = document.getElementById("status").value;
+var comments = document.getElementById("comments").value;
+console.log("图书名称:", bookName);
+console.log("用户ID:", userId);
+console.log("借阅日期:", borrowDate);
+console.log("归还日期:", returnDate);
+console.log("借阅状态:", status);
+console.log("备注:", comments);
+alert("图书借阅成功！");
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

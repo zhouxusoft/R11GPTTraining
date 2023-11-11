@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图书内容发布与管理系统-收藏模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.container {
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+}
+h1 {
+text-align: center;
+}
+.form-group {
+margin-bottom: 20px;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="email"],
+textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+input[type="checkbox"] {
+margin-right: 5px;
+}
+.btn {
+display: inline-block;
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+text-decoration: none;
+border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>收藏图书</h1>
+<form>
+<div class="form-group">
+<label for="bookTitle">书名</label>
+<input type="text" id="bookTitle" name="bookTitle" placeholder="请输入书名">
+</div>
+<div class="form-group">
+<label for="authorName">作者</label>
+<input type="text" id="authorName" name="authorName" placeholder="请输入作者姓名">
+</div>
+<div class="form-group">
+<label for="publishDate">出版日期</label>
+<input type="date" id="publishDate" name="publishDate">
+</div>
+<div class="form-group">
+<label for="genre">类型</label>
+<select name="genre" id="genre">
+<option value="fiction">小说</option>
+<option value="biography">传记</option>
+<option value="history">历史</option>
+<option value="self-help">自助</option>
+</select>
+</div>
+<div class="form-group">
+<label for="rating">评分</label>
+<input type="range" min="0" max="10" id="rating" name="rating">
+</div>
+<div class="form-group">
+<label for="comments">评论</label>
+<textarea id="comments" name="comments" placeholder="请输入评论"></textarea>
+</div>
+<div class="form-group">
+<label for="newsletter">订阅通讯</label>
+<input type="checkbox" id="newsletter" name="newsletter">
+<label for="newsletter">接受最新图书订阅通知</label>
+</div>
+<div class="form-group">
+<input type="submit" value="收藏" class="btn">
+</div>
+</form>
+</div>
+<script>
+document.getElementById("bookTitle").value = "《JavaScript高级编程》";
+document.getElementById("authorName").value = "Nicholas C. Zakas";
+document.getElementById("publishDate").value = "2020-01-01";
+document.getElementById("genre").value = "self-help";
+document.getElementById("rating").value = 8;
+document.getElementById("comments").value = "这是一本非常好的JavaScript编程指南。";
+document.getElementById("newsletter").checked = true;
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

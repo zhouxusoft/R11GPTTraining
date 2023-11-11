@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.container {
+margin: 20px;
+}
+.input-group {
+margin-bottom: 20px;
+}
+.input-group label {
+display: block;
+font-weight: bold;
+margin-bottom: 10px;
+}
+.input-group input[type="text"],
+.input-group input[type="number"] {
+width: 100%;
+padding: 10px;
+}
+.input-group select {
+width: 100%;
+padding: 10px;
+}
+.input-group textarea {
+width: 100%;
+padding: 10px;
+}
+.input-group input[type="file"] {
+margin-top: 10px;
+}
+.input-group input[type="submit"] {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: white;
+border: none;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>图书上架</h1>
+<form action="#" method="post" enctype="multipart/form-data">
+<div class="input-group">
+<label for="bookTitle">图书标题</label>
+<input type="text" id="bookTitle" name="bookTitle" placeholder="请输入图书标题..." required>
+</div>
+<div class="input-group">
+<label for="bookAuthor">作者</label>
+<input type="text" id="bookAuthor" name="bookAuthor" placeholder="请输入作者名字..." required>
+</div>
+<div class="input-group">
+<label for="bookGenre">图书类型</label>
+<select id="bookGenre" name="bookGenre" required>
+<option value="">请选择图书类型</option>
+<option value="fiction">小说</option>
+<option value="nonfiction">非小说</option>
+<option value="poetry">诗歌</option>
+</select>
+</div>
+<div class="input-group">
+<label for="bookDescription">图书描述</label>
+<textarea id="bookDescription" name="bookDescription" placeholder="请输入图书描述..." required></textarea>
+</div>
+<div class="input-group">
+<label for="bookCover">封面图片</label>
+<input type="file" id="bookCover" name="bookCover" required>
+</div>
+<input type="submit" value="提交">
+</form>
+</div>
+<script>
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

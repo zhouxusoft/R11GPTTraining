@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>数据统计模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+}
+h1 {
+text-align: center;
+}
+form {
+width: 300px;
+margin: 0 auto;
+}
+label {
+display: block;
+margin-top: 10px;
+font-weight: bold;
+}
+input[type=text],
+input[type=date],
+input[type=checkbox],
+textarea,
+select {
+width: 100%;
+padding: 8px;
+font-size: 16px;
+margin-top: 5px;
+margin-bottom: 10px;
+box-sizing: border-box;
+}
+input[type=range] {
+width: 100%;
+margin-top: 18px;
+}
+button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+width: 100%;
+}
+</style>
+<script>
+</script>
+</head>
+<body>
+<h1>数据统计模块</h1>
+<form>
+<label for="borrowDate">借书日期:</label>
+<input type="date" id="borrowDate" value="2021-01-01">
+<label for="returnDate">还书日期:</label>
+<input type="date" id="returnDate" value="2021-02-01">
+<label for="bookCategory">图书分类:</label>
+<select id="bookCategory">
+<option value="fiction">小说</option>
+<option value="science">科学</option>
+<option value="history">历史</option>
+</select>
+<label for="userActivity">用户活动:</label>
+<textarea id="userActivity" rows="4">用户活动内容示例</textarea>
+<label for="totalBorrowedBooks">借阅图书总数:</label>
+<input type="text" id="totalBorrowedBooks" value="100">
+<label for="averageDays">平均借阅天数:</label>
+<input type="text" id="averageDays" value="10">
+<label for="activeUsers">活跃用户数量:</label>
+<input type="text" id="activeUsers" value="50">
+<label for="visitors">访问次数:</label>
+<input type="text" id="visitors" value="1000">
+<label for="rating">评分:</label>
+<input type="range" id="rating" min="1" max="5" value="3">
+<label for="newsletter">订阅新闻通讯:</label>
+<input type="checkbox" id="newsletter" checked>
+<button type="submit">提交</button>
+</form>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图书编辑</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+}
+.container {
+width: 80%;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+}
+h1 {
+font-size: 24px;
+text-align: center;
+margin-bottom: 20px;
+}
+label {
+font-weight: bold;
+}
+input[type="text"],
+textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+input[type="checkbox"] {
+margin-bottom: 10px;
+margin-right: 5px;
+}
+#submit-btn {
+display: block;
+width: 100%;
+padding: 10px;
+background-color: #4CAF50;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+</style>
+<script>
+function validateForm() {
+var title = document.forms["bookForm"]["title"].value;
+var author = document.forms["bookForm"]["author"].value;
+var category = document.forms["bookForm"]["category"].value;
+var description = document.forms["bookForm"]["description"].value;
+if (title == "") {
+alert("请填写标题");
+return false;
+}
+if (author == "") {
+alert("请填写作者");
+return false;
+}
+if (category == "") {
+alert("请选择类别");
+return false;
+}
+if (description == "") {
+alert("请填写描述");
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<div class="container">
+<h1>图书编辑</h1>
+<form name="bookForm" action="submit_book.php" method="post" onsubmit="return validateForm()">
+<label for="title">标题</label>
+<input type="text" id="title" name="title" placeholder="请输入标题">
+<label for="author">作者</label>
+<input type="text" id="author" name="author" placeholder="请输入作者">
+<label for="category">类别</label>
+<select id="category" name="category">
+<option value="">请选择类别</option>
+<option value="文学">文学</option>
+<option value="历史">历史</option>
+<option value="科幻">科幻</option>
+<option value="传记">传记</option>
+<option value="哲学">哲学</option>
+</select>
+<label for="description">描述</label>
+<textarea id="description" name="description" rows="4" placeholder="请输入描述"></textarea>
+<label for="available">是否可用</label>
+<input type="checkbox" id="available" name="available" checked>
+<br><br>
+<input type="submit" id="submit-btn" value="提交">
+</form>
+</div>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

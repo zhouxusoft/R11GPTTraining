@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户反馈模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+}
+.form-container {
+max-width: 500px;
+margin: 0 auto;
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
+.form-container h2 {
+text-align: center;
+}
+.form-container label {
+display: block;
+margin-bottom: 10px;
+}
+.form-container input[type="text"],
+.form-container textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 5px;
+resize: vertical;
+}
+.form-container .submit-btn {
+display: block;
+width: 100%;
+padding: 10px;
+margin-top: 20px;
+background-color: #4CAF50;
+color: #fff;
+text-align: center;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+<h2>用户反馈</h2>
+<form>
+<label for="name">姓名</label>
+<input type="text" id="name" name="name" placeholder="请输入您的姓名">
+<label for="email">邮箱</label>
+<input type="text" id="email" name="email" placeholder="请输入您的邮箱">
+<label for="feedback">反馈内容</label>
+<textarea id="feedback" name="feedback" placeholder="请输入您的反馈内容"></textarea>
+<input type="checkbox" id="anonymous" name="anonymous">
+<label for="anonymous">匿名反馈</label>
+<div>
+<label for="rating">评分</label>
+<input type="range" id="rating" name="rating" min="1" max="10" step="1">
+</div>
+<input type="submit" class="submit-btn" value="提交反馈">
+</form>
+</div>
+<script>
+var form = document.querySelector('form');
+form.addEventListener('submit', function(event) {
+event.preventDefault();
+var name = document.getElementById('name').value;
+var email = document.getElementById('email').value;
+var feedback = document.getElementById('feedback').value;
+var anonymous = document.getElementById('anonymous').checked;
+var rating = document.getElementById('rating').value;
+var feedbackObj = {
+name: name,
+email: email,
+feedback: feedback,
+anonymous: anonymous,
+rating: rating
+};
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

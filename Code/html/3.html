@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>图书归还</title>
+<style>
+.form-container {
+margin: 20px;
+padding: 20px;
+border: 1px solid #ccc;
+width: 300px;
+}
+.form-container label {
+display: block;
+margin-bottom: 10px;
+}
+.form-container input[type="text"],
+.form-container select {
+width: 100%;
+padding: 5px;
+margin-bottom: 10px;
+}
+.form-container button {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+}
+.form-container button:hover {
+opacity: 0.8;
+}
+.error-message {
+color: red;
+}
+</style>
+</head>
+<body>
+<div class="form-container">
+<h2>图书归还</h2>
+<form id="return-form">
+<label for="book-id">图书ID:</label>
+<input type="text" id="book-id" name="book-id" placeholder="请输入图书ID" required>
+<label for="book-title">图书标题:</label>
+<input type="text" id="book-title" name="book-title" readonly>
+<label for="return-date">归还日期:</label>
+<input type="text" id="return-date" name="return-date" readonly>
+<label for="return-condition">图书状况:</label>
+<select id="return-condition" name="return-condition" required>
+<option value="">请选择图书状况</option>
+<option value="良好">良好</option>
+<option value="破损">破损</option>
+<option value="丢失">丢失</option>
+</select>
+<label for="additional-comments">备注:</label>
+<textarea id="additional-comments" name="additional-comments"></textarea>
+<button type="submit">提交</button>
+</form>
+<p class="error-message"></p>
+</div>
+<script>
+const form = document.getElementById('return-form');
+const bookIdInput = document.getElementById('book-id');
+const bookTitleInput = document.getElementById('book-title');
+const returnDateInput = document.getElementById('return-date');
+function getBookInfo(bookId) {
+const bookInfo = {
+title: "图书标题",
+returnDate: "2021-01-01"
+};
+return bookInfo;
+}
+form.addEventListener('submit', (e) => {
+e.preventDefault();
+const bookId = bookIdInput.value;
+if (bookId !== "") {
+const bookInfo = getBookInfo(bookId);
+bookTitleInput.value = bookInfo.title;
+returnDateInput.value = bookInfo.returnDate;
+} else {
+const errorMessage = document.querySelector('.error-message');
+errorMessage.textContent = "请输入图书ID";
+}
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

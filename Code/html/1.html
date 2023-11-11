@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>图书搜索</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+background-color: #F7F7F7;
+}
+h1 {
+font-size: 24px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+.search-form {
+margin-bottom: 20px;
+padding: 10px;
+background-color: #FFF;
+}
+.search-form input[type="text"] {
+width: 300px;
+padding: 8px;
+font-size: 16px;
+border: 1px solid #CCC;
+}
+.search-form select {
+padding: 8px;
+font-size: 16px;
+border: 1px solid #CCC;
+}
+.search-form button {
+padding: 8px 20px;
+font-size: 16px;
+border: none;
+background-color: #007bff;
+color: #FFF;
+cursor: pointer;
+}
+.search-results {
+background-color: #FFF;
+padding: 10px;
+}
+.search-results ul {
+list-style-type: none;
+padding: 0;
+}
+.search-results li {
+margin-bottom: 10px;
+}
+.search-results h3 {
+font-size: 18px;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.search-results p {
+margin: 0;
+}
+</style>
+</head>
+<body>
+<h1>图书搜索</h1>
+<div class="search-form">
+<label for="keyword">关键字：</label>
+<input type="text" id="keyword" name="keyword" placeholder="请输入关键字">
+<label for="author">作者：</label>
+<input type="text" id="author" name="author" placeholder="请输入作者">
+<label for="category">类别：</label>
+<select id="category" name="category">
+<option value="">全部</option>
+<option value="小说">小说</option>
+<option value="历史">历史</option>
+<option value="科技">科技</option>
+<option value="教育">教育</option>
+</select>
+<button type="button">搜索</button>
+</div>
+<div class="search-results">
+<ul>
+<li>
+<h3>图书标题1</h3>
+<p>作者：作者名字1</p>
+<p>类别：类别1</p>
+</li>
+<li>
+<h3>图书标题2</h3>
+<p>作者：作者名字2</p>
+<p>类别：类别2</p>
+</li>
+<li>
+<h3>图书标题3</h3>
+<p>作者：作者名字3</p>
+<p>类别：类别3</p>
+</li>
+</ul>
+</div>
+<script>
+const searchButton = document.querySelector('button');
+searchButton.addEventListener('click', function () {
+const keyword = document.getElementById('keyword').value;
+const author = document.getElementById('author').value;
+const category = document.getElementById('category').value;
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

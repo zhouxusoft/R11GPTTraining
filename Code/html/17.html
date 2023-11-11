@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>异常处理模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f0f0f0;
+margin: 0;
+padding: 20px;
+}
+h1 {
+color: #333;
+}
+.error-container {
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 5px;
+padding: 20px;
+}
+.error-message {
+color: #ff0000;
+font-size: 18px;
+margin-bottom: 15px;
+}
+.error-help {
+color: #888;
+font-size: 14px;
+margin-top: 15px;
+}
+.error-help a {
+color: #888;
+text-decoration: none;
+}
+</style>
+</head>
+<body>
+<h1>异常处理模块</h1>
+<div class="error-container">
+<div class="error-message">发生了系统错误或异常</div>
+<div class="error-help">
+如果您需要帮助，请<a href="#">联系支持团队</a>。
+</div>
+</div>
+<script>
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

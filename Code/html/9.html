@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>分类管理模块</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f9f9f9;
+}
+h1 {
+color: #333;
+text-align: center;
+padding-top: 40px;
+}
+.container {
+width: 500px;
+margin: 0 auto;
+padding: 20px;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 5px;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+input[type="text"],
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+button {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.category-list {
+margin-top: 20px;
+list-style-type: none;
+padding: 0;
+}
+li {
+margin-bottom: 10px;
+}
+.category-item {
+display: flex;
+align-items: center;
+}
+.category-name {
+flex-grow: 1;
+}
+.edit-button,
+.delete-button {
+padding: 5px 10px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.edit-button {
+margin-right: 10px;
+}
+</style>
+</head>
+<body>
+<h1>分类管理模块</h1>
+<div class="container">
+<label for="category-name">分类名称:</label>
+<input type="text" id="category-name" placeholder="请输入分类名称">
+<label for="category-status">分类状态:</label>
+<select id="category-status">
+<option value="active">启用</option>
+<option value="inactive">禁用</option>
+</select>
+<button id="add-category-button">添加分类</button>
+<h2>分类列表</h2>
+<ul class="category-list">
+<li>
+<div class="category-item">
+<span class="category-name">计算机科学</span>
+<button class="edit-button">编辑</button>
+<button class="delete-button">删除</button>
+</div>
+</li>
+<li>
+<div class="category-item">
+<span class="category-name">英语学习</span>
+<button class="edit-button">编辑</button>
+<button class="delete-button">删除</button>
+</div>
+</li>
+</ul>
+</div>
+<script>
+document.getElementById("add-category-button").addEventListener("click", function() {
+var categoryName = document.getElementById("category-name").value;
+var categoryStatus = document.getElementById("category-status").value;
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

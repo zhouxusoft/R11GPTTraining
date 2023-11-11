@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .nav {
+            width: 100%;
+            height: 9vh;
+            min-height: 60px;
+            background-color: #24648F;
+            display: flex;
+            align-items: center;
+        }
+
+        .softnametitle {
+            display: flex;
+            align-items: center;
+            padding: 0 1vw;
+            font-size: 24px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .container {
+            display: flex;
+
+        }
+
+        .leftnav {
+            width: 15vw;
+            max-width: 400px;
+            min-width: 150px;
+            background-color: #6290AF;
+            height: 91vh;
+        }
+
+        .menulist {
+            padding: 10px 0;
+        }
+
+        .menuitem {
+            padding: 1vh 2vw;
+            display: flex;
+            align-items: center;
+            transition: 0.1s;
+        }
+
+        .menuitem:hover {
+            background-color: #24648F;
+        }
+
+        .active {
+            background-color: #24648F;
+        }
+
+        .menuicon {
+            width: 18px;
+            color: green;
+        }
+
+        .menuname {
+            min-height: 30px;
+            height: 5vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            margin-left: 4px;
+            white-space: nowrap;
+        }
+
+        .mainmodule {
+            flex: 1;
+        }
+
+        .mainmodulepage {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="softnametitle"></div>
+    </div>
+    <div class="container">
+        <div class="leftnav">
+            <div class="menulist">
+                <div class="menuitem" id="menuitem0">
+                    <img src="./icons/menu.svg" class="menuicon">
+                    <div class="menuname">图书发布</div>
+                </div>
+            </div>
+        </div>
+        <div class="mainmodule">
+            <iframe src="./html/0.html" frameborder="0" class="mainmodulepage"></iframe>
+        </div>
+    </div>
+
+    <script>
+        let moudlelist = ['图书发布模块', '图书管理模块', '用户管理模块', '内容搜索模块', '评论与评分模块', '阅读记录模块', '推荐系统模块', '购买与支付模块', '图书分类模块', '阅读社区模块']
+        let softname = '图书内容发布与管理系统'
+        for (let i = 0; i < moudlelist.length; i++) {
+            moudlelist[i] = moudlelist[i].replace('模块', '') 
+        }
+        document.title = softname
+        const softnametitle = document.getElementsByClassName('softnametitle')[0]
+        softnametitle.innerHTML = softname
+        const menulist = document.getElementsByClassName('menulist')[0]
+        menulist.innerHTML = ''
+        for (let i = 0; i < moudlelist.length; i++) {
+            menulist.innerHTML += `<div class="menuitem" id="menuitem${i}">
+                                        <img src="./icons/menu.svg" class="menuicon">
+                                        <div class="menuname">${moudlelist[i]}</div>
+                                    </div>`
+        }
+        const menuitem = document.getElementsByClassName('menuitem')
+        const mainmodulepage = document.getElementsByClassName('mainmodulepage')[0]
+        for (let i = 0; i < menuitem.length; i++) {
+            menuitem[i].addEventListener('click', function (e) {
+                clickmenuid = menuitem[i].id.replace('menuitem', '')
+                console.log(clickmenuid);
+                mainmodulepage.src = `./html/${clickmenuid}.html`           
+                for (let j = 0; j < menuitem.length; j++) {
+                    menuitem[j].classList.remove('active')  
+                }
+                menuitem[i].classList.add('active')
+            })
+        }
+    </script>
+</body>
+</html>

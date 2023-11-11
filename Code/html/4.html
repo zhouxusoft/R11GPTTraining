@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>图书购买</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+background-color: #f4f4f4;
+}
+.container {
+width: 600px;
+margin: 0 auto;
+padding: 20px;
+}
+h1 {
+text-align: center;
+color: #333;
+}
+label {
+font-weight: bold;
+}
+.form-group {
+margin-bottom: 15px;
+}
+.form-control {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.btn {
+display: inline-block;
+padding: 10px 20px;
+margin-top: 10px;
+background-color: #4CAF50;
+color: #fff;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.btn:hover {
+background-color: #45a049;
+}
+.message {
+margin-top: 20px;
+padding: 10px;
+background-color: #dff0d8;
+color: #3c763d;
+border: 1px solid #d6e9c6;
+border-radius: 4px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>图书购买</h1>
+<div class="form-group">
+<label for="book-title">图书名称</label>
+<input type="text" id="book-title" class="form-control" value="《神秘岛》" readonly>
+</div>
+<div class="form-group">
+<label for="quantity">数量</label>
+<input type="number" id="quantity" class="form-control" min="1" value="1">
+</div>
+<div class="form-group">
+<label for="delivery-method">送货方式</label>
+<select id="delivery-method" class="form-control">
+<option value="standard">标准送货</option>
+<option value="express">快速送货</option>
+</select>
+</div>
+<div class="form-group">
+<label>支付方式</label><br>
+<input type="radio" name="payment-method" value="credit-card" checked> 信用卡支付<br>
+<input type="radio" name="payment-method" value="wechat-pay"> 微信支付<br>
+<input type="radio" name="payment-method" value="alipay"> 支付宝支付
+</div>
+<div class="form-group">
+<label for="credit-card">信用卡号</label>
+<input type="text" id="credit-card" class="form-control" placeholder="请输入信用卡号">
+</div>
+<div class="form-group">
+<label for="delivery-address">送货地址</label>
+<textarea id="delivery-address" class="form-control" rows="3" placeholder="请输入送货地址"></textarea>
+</div>
+<div class="form-group">
+<label for="promo-code">优惠码</label>
+<input type="text" id="promo-code" class="form-control" placeholder="请输入优惠码">
+</div>
+<div class="form-group">
+<label for="total-price">总价格</label>
+<input type="text" id="total-price" class="form-control" value="99.99" readonly>
+</div>
+<button class="btn" onclick="placeOrder()">下单</button>
+<div id="message" class="message" style="display:none;"></div>
+</div>
+<script>
+function placeOrder() {
+document.getElementById("message").style.display = "block";
+document.getElementById("message").innerHTML = "订单已下单，请耐心等待发货！";
+}
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

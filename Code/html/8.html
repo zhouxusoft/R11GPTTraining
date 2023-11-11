@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>用户管理模块</title>
+<style>
+.input-group {
+margin-bottom: 10px;
+}
+.input-group label {
+display: inline-block;
+width: 150px;
+}
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="email"],
+.input-group select {
+width: 300px;
+}
+.input-group textarea {
+width: 300px;
+height: 150px;
+}
+.input-group input[type="submit"] {
+padding: 10px 20px;
+background-color: #4CAF50;
+color: #FFF;
+border: none;
+cursor: pointer;
+}
+.input-group input[type="submit"]:hover {
+background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<h1>用户管理模块</h1>
+<form>
+<div class="input-group">
+<label for="username">用户名：</label>
+<input type="text" id="username" name="username" value="JohnDoe" disabled>
+</div>
+<div class="input-group">
+<label for="email">邮箱：</label>
+<input type="email" id="email" name="email" value="johndoe@example.com" disabled>
+</div>
+<div class="input-group">
+<label for="password">密码：</label>
+<input type="password" id="password" name="password" placeholder="请输入密码">
+</div>
+<div class="input-group">
+<label for="confirmPassword">确认密码：</label>
+<input type="password" id="confirmPassword" name="confirmPassword" placeholder="请确认密码">
+</div>
+<div class="input-group">
+<label for="role">角色：</label>
+<select id="role" name="role">
+<option value="admin">管理员</option>
+<option value="user" selected>普通用户</option>
+</select>
+</div>
+<div class="input-group">
+<input type="submit" value="添加用户">
+</div>
+</form>
+<h2>用户列表</h2>
+<ul>
+<li>用户名：<strong>JohnDoe</strong>，邮箱：<strong>johndoe@example.com</strong></li>
+</ul>
+<script>
+var addUserForm = document.querySelector('form');
+addUserForm.addEventListener('submit', function(event) {
+event.preventDefault();
+var username = document.getElementById('username').value;
+var email = document.getElementById('email').value;
+console.log('添加用户：', { username: username, email: email });
+addUserForm.reset();
+});
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>

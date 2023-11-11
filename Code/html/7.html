@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>图书管理系统</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+}
+h1 {
+color: #333;
+}
+.form-group {
+margin-bottom: 20px;
+}
+label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+input[type="text"],
+textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+select {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+button {
+background-color: #4CAF50;
+border: none;
+color: white;
+padding: 10px 20px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+}
+th, td {
+padding: 8px;
+text-align: left;
+border-bottom: 1px solid #ddd;
+}
+th {
+background-color: #4CAF50;
+color: white;
+}
+</style>
+</head>
+<body>
+<h1>图书管理系统</h1>
+<h2>添加图书</h2>
+<form>
+<div class="form-group">
+<label for="title">图书标题：</label>
+<input type="text" id="title" name="title">
+</div>
+<div class="form-group">
+<label for="author">作者：</label>
+<input type="text" id="author" name="author">
+</div>
+<div class="form-group">
+<label for="category">分类：</label>
+<select id="category" name="category">
+<option value="fiction">小说</option>
+<option value="science-fiction">科幻</option>
+<option value="mystery">悬疑</option>
+<option value="biography">传记</option>
+<option value="history">历史</option>
+</select>
+</div>
+<div class="form-group">
+<label for="description">图书描述：</label>
+<textarea id="description" name="description"></textarea>
+</div>
+<button type="submit">添加</button>
+</form>
+<h2>图书列表</h2>
+<table>
+<tr>
+<th>图书标题</th>
+<th>作者</th>
+<th>分类</th>
+<th>描述</th>
+<th>操作</th>
+</tr>
+<tr>
+<td>神雕侠侣</td>
+<td>金庸</td>
+<td>武侠</td>
+<td>讲述了一段动人的侠义爱情故事</td>
+<td>
+<button>编辑</button>
+<button>删除</button>
+</td>
+</tr>
+<tr>
+<td>红楼梦</td>
+<td>曹雪芹</td>
+<td>古典文学</td>
+<td>以贾、史、王、薛四大家族的兴衰为背景描写</td>
+<td>
+<button>编辑</button>
+<button>删除</button>
+</td>
+</tr>
+<tr>
+<td>三体</td>
+<td>刘慈欣</td>
+<td>科幻</td>
+<td>荣获科幻小说界最高奖项雨果奖</td>
+<td>
+<button>编辑</button>
+<button>删除</button>
+</td>
+</tr>
+</table>
+<h2>借阅历史查看</h2>
+<table>
+<tr>
+<th>图书标题</th>
+<th>借阅人</th>
+<th>借阅时间</th>
+</tr>
+<tr>
+<td>神雕侠侣</td>
+<td>张三</td>
+<td>2021-01-01</td>
+</tr>
+<tr>
+<td>三体</td>
+<td>李四</td>
+<td>2021-02-15</td>
+</tr>
+<tr>
+<td>红楼梦</td>
+<td>王五</td>
+<td>2021-03-28</td>
+</tr>
+</table>
+<script>
+</script>
+</body>
+</html>
+            <style>
+            img {
+                width: 50px;
+                height: 50px;
+            }
+            a {
+                color: aaaaa;
+            }
+            .sidebar {
+                float: left;
+                margin-right: 30px;
+            }
+            .main-content {
+                width: 60%;
+            }
+            li {
+                display: inline-block;
+            }
+            </style>
+            <script>
+                document.querySelectorAll('img').forEach(imgEle => {
+                    imgEle.src = 'logo.png'
+                })
+                document.querySelectorAll('footer, .footer').forEach(ele => {
+                    ele.remove()
+                })
+            </script>
