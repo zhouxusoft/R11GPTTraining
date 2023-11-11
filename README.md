@@ -6,7 +6,9 @@
 
 - 窗口大小建议1280*720
 
-- 需在 Code/config.json 中配置
+- 将 Code/config_example.json，改为 config.json
+
+- 在 Code/config.json 中配置
   - 软件名称
   - 功能模块列表
   - 顶部导航栏颜色
