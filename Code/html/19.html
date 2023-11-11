@@ -1,99 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>系统配置模块</title>
+<title>插件扩展模块</title>
 <style>
-body {
-font-family: Arial, sans-serif;
-background-color: #f2f2f2;
+.container {
+width: 800px;
+margin: 0 auto;
 }
 h1 {
 text-align: center;
-color: #333;
 }
 .form-group {
-margin-bottom: 15px;
+margin-bottom: 20px;
 }
 label {
 display: block;
-margin-bottom: 5px;
 font-weight: bold;
+margin-bottom: 5px;
 }
-input[type="text"], input[type="password"], textarea {
-width: 100%;
-padding: 10px;
-border-radius: 5px;
-border: 1px solid #ccc;
-}
+input[type="text"],
+input[type="range"],
+input[type="checkbox"],
 select {
 width: 100%;
-padding: 10px;
-border-radius: 5px;
-border: 1px solid #ccc;
+padding: 8px;
+font-size: 16px;
 }
-input[type="checkbox"] {
-margin-right: 5px;
-}
-.btn {
-display: inline-block;
+input[type="submit"] {
+width: auto;
 padding: 10px 20px;
-background-color: #333;
-color: #fff;
-text-decoration: none;
-border-radius: 5px;
-}
-.btn:hover {
-background-color: #555;
+font-size: 16px;
+background-color: #4CAF50;
+color: white;
+cursor: pointer;
 }
 </style>
 </head>
 <body>
-<h1>系统配置模块</h1>
-<form action="" method="post">
+<div class="container">
+<h1>插件扩展模块</h1>
+<form>
 <div class="form-group">
-<label for="interface-style">界面风格:</label>
-<select id="interface-style" name="interface-style">
-<option value="default">默认风格</option>
-<option value="dark">暗黑风格</option>
-<option value="light">亮白风格</option>
-<option value="custom">自定义风格</option>
+<label for="plugin-name">插件名称</label>
+<input type="text" id="plugin-name" value="插件1">
+</div>
+<div class="form-group">
+<label for="description">描述</label>
+<textarea id="description">这是一个用于实现特定功能的插件。</textarea>
+</div>
+<div class="form-group">
+<label for="functionality">功能</label>
+<input type="checkbox" id="functionality" checked>
+<label for="functionality">特性1</label>
+<input type="checkbox" id="functionality2">
+<label for="functionality2">特性2</label>
+</div>
+<div class="form-group">
+<label for="priority">优先级</label>
+<input type="range" id="priority" min="1" max="10" value="5">
+</div>
+<div class="form-group">
+<label for="language">编程语言</label>
+<select id="language">
+<option value="javascript">JavaScript</option>
+<option value="python">Python</option>
+<option value="java">Java</option>
+<option value="csharp">C#</option>
 </select>
 </div>
 <div class="form-group">
-<label for="email-notification">邮件通知:</label>
-<input type="checkbox" id="email-notification" name="email-notification" checked>
-<label for="email-notification">启用邮件通知</label>
+<label for="code">代码</label>
+<textarea id="code" readonly></textarea>
 </div>
-<div class="form-group">
-<label for="email-address">邮件地址:</label>
-<input type="text" id="email-address" name="email-address" placeholder="请输入邮件地址" value="admin@example.com">
-</div>
-<div class="form-group">
-<label for="password">密码:</label>
-<input type="password" id="password" name="password" placeholder="请输入密码">
-</div>
-<div class="form-group">
-<label for="description">系统描述:</label>
-<textarea id="description" name="description" rows="5" placeholder="请输入系统描述">这是一个图书内容发布与管理系统</textarea>
-</div>
-<div class="form-group">
-<label for="slider">拖动条:</label>
-<input type="range" id="slider" name="slider" min="0" max="100" value="50">
-</div>
-<div class="form-group">
-<label>多选框:</label>
-<input type="checkbox" id="option1" name="option1" checked>
-<label for="option1">选项1</label>
-<input type="checkbox" id="option2" name="option2">
-<label for="option2">选项2</label>
-<input type="checkbox" id="option3" name="option3" checked>
-<label for="option3">选项3</label>
-</div>
-<div class="form-group">
-<input type="submit" class="btn" value="保存配置">
-</div>
+<input type="submit" value="保存插件">
 </form>
+</div>
 <script>
 </script>
 </body>

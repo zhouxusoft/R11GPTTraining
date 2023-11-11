@@ -1,108 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>图书编辑</title>
+<title>图片处理模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
-background-color: #f2f2f2;
 }
 .container {
-width: 80%;
+width: 800px;
 margin: 0 auto;
 padding: 20px;
-background-color: #fff;
 }
 h1 {
-font-size: 24px;
 text-align: center;
+}
+.form-group {
 margin-bottom: 20px;
 }
 label {
+display: block;
 font-weight: bold;
+margin-bottom: 5px;
 }
 input[type="text"],
-textarea {
-width: 100%;
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-}
+input[type="number"],
 select {
 width: 100%;
 padding: 10px;
-margin-bottom: 10px;
 border: 1px solid #ccc;
-border-radius: 5px;
+border-radius: 4px;
+box-sizing: border-box;
 }
-input[type="checkbox"] {
-margin-bottom: 10px;
-margin-right: 5px;
-}
-#submit-btn {
-display: block;
+input[type="range"] {
 width: 100%;
-padding: 10px;
-background-color: #4CAF50;
+}
+.btn {
+padding: 10px 20px;
+background-color: #2196F3;
 color: #fff;
 border: none;
-border-radius: 5px;
+border-radius: 4px;
 cursor: pointer;
 }
+.btn:hover {
+background-color: #0D47A1;
+}
 </style>
-<script>
-function validateForm() {
-var title = document.forms["bookForm"]["title"].value;
-var author = document.forms["bookForm"]["author"].value;
-var category = document.forms["bookForm"]["category"].value;
-var description = document.forms["bookForm"]["description"].value;
-if (title == "") {
-alert("请填写标题");
-return false;
-}
-if (author == "") {
-alert("请填写作者");
-return false;
-}
-if (category == "") {
-alert("请选择类别");
-return false;
-}
-if (description == "") {
-alert("请填写描述");
-return false;
-}
-return true;
-}
-</script>
 </head>
 <body>
 <div class="container">
-<h1>图书编辑</h1>
-<form name="bookForm" action="submit_book.php" method="post" onsubmit="return validateForm()">
-<label for="title">标题</label>
-<input type="text" id="title" name="title" placeholder="请输入标题">
-<label for="author">作者</label>
-<input type="text" id="author" name="author" placeholder="请输入作者">
-<label for="category">类别</label>
-<select id="category" name="category">
-<option value="">请选择类别</option>
-<option value="文学">文学</option>
-<option value="历史">历史</option>
-<option value="科幻">科幻</option>
-<option value="传记">传记</option>
-<option value="哲学">哲学</option>
+<h1>图片处理模块</h1>
+<form>
+<div class="form-group">
+<label for="crop">裁剪:</label>
+<input type="text" id="crop" name="crop" placeholder="请输入裁剪参数">
+</div>
+<div class="form-group">
+<label for="rotate">旋转:</label>
+<input type="number" id="rotate" name="rotate" placeholder="请输入旋转角度">
+</div>
+<div class="form-group">
+<label for="resize">调整大小:</label>
+<input type="text" id="resize" name="resize" placeholder="请输入调整大小参数">
+</div>
+<div class="form-group">
+<label for="filter">应用滤镜:</label>
+<select id="filter" name="filter">
+<option value="1">滤镜1</option>
+<option value="2">滤镜2</option>
+<option value="3">滤镜3</option>
 </select>
-<label for="description">描述</label>
-<textarea id="description" name="description" rows="4" placeholder="请输入描述"></textarea>
-<label for="available">是否可用</label>
-<input type="checkbox" id="available" name="available" checked>
-<br><br>
-<input type="submit" id="submit-btn" value="提交">
+</div>
+<div class="form-group">
+<label>保存处理结果:</label>
+<input type="checkbox" id="saveCrop" name="saveCrop">
+<label for="saveCrop">裁剪</label>
+<input type="checkbox" id="saveRotate" name="saveRotate">
+<label for="saveRotate">旋转</label>
+<input type="checkbox" id="saveResize" name="saveResize">
+<label for="saveResize">调整大小</label>
+<input type="checkbox" id="saveFilter" name="saveFilter">
+<label for="saveFilter">滤镜</label>
+</div>
+<div class="form-group">
+<input type="button" class="btn" value="开始处理">
+</div>
 </form>
 </div>
+<script>
+const form = document.querySelector('form');
+const btn = document.querySelector('.btn');
+btn.addEventListener('click', function() {
+const cropParam = document.getElementById('crop').value;
+const rotateAngle = document.getElementById('rotate').value;
+const resizeParam = document.getElementById('resize').value;
+const filterValue = document.getElementById('filter').value;
+const saveCrop = document.getElementById('saveCrop').checked;
+const saveRotate = document.getElementById('saveRotate').checked;
+const saveResize = document.getElementById('saveResize').checked;
+const saveFilter = document.getElementById('saveFilter').checked;
+alert('图片处理成功');
+});
+</script>
 </body>
 </html>
             <style>

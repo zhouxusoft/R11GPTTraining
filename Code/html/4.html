@@ -1,104 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>图书购买</title>
+<title>图书排版模块</title>
 <style>
-body {
-font-family: Arial, sans-serif;
-background-color: #f4f4f4;
-}
 .container {
-width: 600px;
+max-width: 800px;
 margin: 0 auto;
 padding: 20px;
 }
-h1 {
-text-align: center;
-color: #333;
-}
-label {
-font-weight: bold;
-}
 .form-group {
-margin-bottom: 15px;
+margin-bottom: 20px;
 }
-.form-control {
+.label {
+display: block;
+font-weight: bold;
+margin-bottom: 5px;
+}
+.input-text {
 width: 100%;
 padding: 10px;
 border: 1px solid #ccc;
 border-radius: 4px;
 }
-.btn {
-display: inline-block;
+.button {
 padding: 10px 20px;
-margin-top: 10px;
 background-color: #4CAF50;
-color: #fff;
+color: white;
 border: none;
 border-radius: 4px;
 cursor: pointer;
-}
-.btn:hover {
-background-color: #45a049;
-}
-.message {
-margin-top: 20px;
-padding: 10px;
-background-color: #dff0d8;
-color: #3c763d;
-border: 1px solid #d6e9c6;
-border-radius: 4px;
 }
 </style>
 </head>
 <body>
 <div class="container">
-<h1>图书购买</h1>
+<h1>图书排版模块</h1>
+<form>
 <div class="form-group">
-<label for="book-title">图书名称</label>
-<input type="text" id="book-title" class="form-control" value="《神秘岛》" readonly>
-</div>
-<div class="form-group">
-<label for="quantity">数量</label>
-<input type="number" id="quantity" class="form-control" min="1" value="1">
-</div>
-<div class="form-group">
-<label for="delivery-method">送货方式</label>
-<select id="delivery-method" class="form-control">
-<option value="standard">标准送货</option>
-<option value="express">快速送货</option>
+<label class="label">选择排版样式：</label>
+<select class="input-text">
+<option>样式1</option>
+<option>样式2</option>
+<option>样式3</option>
 </select>
 </div>
 <div class="form-group">
-<label>支付方式</label><br>
-<input type="radio" name="payment-method" value="credit-card" checked> 信用卡支付<br>
-<input type="radio" name="payment-method" value="wechat-pay"> 微信支付<br>
-<input type="radio" name="payment-method" value="alipay"> 支付宝支付
+<label class="label">选择布局：</label>
+<select class="input-text">
+<option>布局1</option>
+<option>布局2</option>
+<option>布局3</option>
+</select>
 </div>
 <div class="form-group">
-<label for="credit-card">信用卡号</label>
-<input type="text" id="credit-card" class="form-control" placeholder="请输入信用卡号">
+<label class="label">章节标题：</label>
+<input type="text" class="input-text" placeholder="请输入章节标题">
 </div>
 <div class="form-group">
-<label for="delivery-address">送货地址</label>
-<textarea id="delivery-address" class="form-control" rows="3" placeholder="请输入送货地址"></textarea>
+<label class="label">页眉内容：</label>
+<input type="text" class="input-text" placeholder="请输入页眉内容">
 </div>
 <div class="form-group">
-<label for="promo-code">优惠码</label>
-<input type="text" id="promo-code" class="form-control" placeholder="请输入优惠码">
+<label class="label">页脚内容：</label>
+<input type="text" class="input-text" placeholder="请输入页脚内容">
 </div>
 <div class="form-group">
-<label for="total-price">总价格</label>
-<input type="text" id="total-price" class="form-control" value="99.99" readonly>
+<label class="label">页码类型：</label>
+<input type="radio" name="page-type" value="1">数字
+<input type="radio" name="page-type" value="2">罗马数字
 </div>
-<button class="btn" onclick="placeOrder()">下单</button>
-<div id="message" class="message" style="display:none;"></div>
+<div class="form-group">
+<label class="label">页面设置：</label>
+<input type="checkbox">适应屏幕
+<input type="checkbox">适应纸张
+</div>
+<button class="button">保存</button>
+</form>
 </div>
 <script>
-function placeOrder() {
-document.getElementById("message").style.display = "block";
-document.getElementById("message").innerHTML = "订单已下单，请耐心等待发货！";
-}
+document.querySelector('.button').addEventListener('click', function(e) {
+e.preventDefault();
+alert('保存成功！');
+});
 </script>
 </body>
 </html>

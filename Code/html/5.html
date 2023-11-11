@@ -1,77 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>标签管理模块</title>
 <style>
-.container {
-margin: 20px;
+.form-container {
+max-width: 400px;
+margin: 20px auto;
 }
-.input-group {
-margin-bottom: 20px;
-}
-.input-group label {
+.form-container label,
+.form-container input {
 display: block;
-font-weight: bold;
 margin-bottom: 10px;
 }
-.input-group input[type="text"],
-.input-group input[type="number"] {
+.form-container input[type="text"],
+.form-container input[type="number"],
+.form-container textarea {
 width: 100%;
+padding: 5px;
+border: 1px solid #ccc;
+border-radius: 4px;
+}
+.form-container input[type="submit"] {
 padding: 10px;
-}
-.input-group select {
-width: 100%;
-padding: 10px;
-}
-.input-group textarea {
-width: 100%;
-padding: 10px;
-}
-.input-group input[type="file"] {
-margin-top: 10px;
-}
-.input-group input[type="submit"] {
-padding: 10px 20px;
 background-color: #4CAF50;
 color: white;
 border: none;
+border-radius: 4px;
 cursor: pointer;
+}
+.form-container input[type="submit"]:hover {
+background-color: #45a049;
 }
 </style>
 </head>
 <body>
-<div class="container">
-<h1>图书上架</h1>
-<form action="#" method="post" enctype="multipart/form-data">
-<div class="input-group">
-<label for="bookTitle">图书标题</label>
-<input type="text" id="bookTitle" name="bookTitle" placeholder="请输入图书标题..." required>
-</div>
-<div class="input-group">
-<label for="bookAuthor">作者</label>
-<input type="text" id="bookAuthor" name="bookAuthor" placeholder="请输入作者名字..." required>
-</div>
-<div class="input-group">
-<label for="bookGenre">图书类型</label>
-<select id="bookGenre" name="bookGenre" required>
-<option value="">请选择图书类型</option>
-<option value="fiction">小说</option>
-<option value="nonfiction">非小说</option>
-<option value="poetry">诗歌</option>
-</select>
-</div>
-<div class="input-group">
-<label for="bookDescription">图书描述</label>
-<textarea id="bookDescription" name="bookDescription" placeholder="请输入图书描述..." required></textarea>
-</div>
-<div class="input-group">
-<label for="bookCover">封面图片</label>
-<input type="file" id="bookCover" name="bookCover" required>
-</div>
-<input type="submit" value="提交">
+<div class="form-container">
+<h2>标签管理</h2>
+<form action="" method="post">
+<label for="tag-name">标签名称：</label>
+<input type="text" id="tag-name" name="tag_name" placeholder="请输入标签名称" value="虚构标签">
+<input type="submit" value="添加标签">
+</form>
+<h2>分类管理</h2>
+<form action="" method="post">
+<label for="category-name">分类名称：</label>
+<input type="text" id="category-name" name="category_name" placeholder="请输入分类名称" value="虚构分类">
+<label for="category-description">分类描述：</label>
+<textarea id="category-description" name="category_description" placeholder="请输入分类描述">虚构分类描述...</textarea>
+<input type="submit" value="添加分类">
 </form>
 </div>
-<script>
-</script>
 </body>
 </html>
             <style>

@@ -1,62 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>图书推荐</title>
+<title>多语言支持模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
 }
-h1 {
-text-align: center;
-margin-top: 50px;
-}
-.recommendation-list {
-list-style-type: none;
-padding: 0;
-margin: 30px auto;
-width: 600px;
-}
-.recommendation-item {
-background-color: #f5f5f5;
-border: 1px solid #ddd;
-padding: 15px;
+label {
+display: block;
 margin-bottom: 10px;
-}
-.book-title {
-font-size: 18px;
 font-weight: bold;
 }
-.book-author {
-font-size: 14px;
-color: #999;
-margin-top: 5px;
+select {
+margin-bottom: 10px;
 }
-.book-description {
+input[type="submit"] {
 margin-top: 10px;
 }
 </style>
+<script>
+function changeLanguage() {
+var selectedLanguage = document.getElementById("language").value;
+console.log("切换语言为: " + selectedLanguage);
+document.getElementById("languageForm").reset();
+document.getElementById("result").innerText = selectedLanguage;
+}
+</script>
 </head>
 <body>
-<h1>图书推荐</h1>
-<ul class="recommendation-list">
-<li class="recommendation-item">
-<h2 class="book-title">图书标题1</h2>
-<p class="book-author">作者：作者名1</p>
-<p class="book-description">这是一本描述图书内容的示例文本。</p>
-</li>
-<li class="recommendation-item">
-<h2 class="book-title">图书标题2</h2>
-<p class="book-author">作者：作者名2</p>
-<p class="book-description">这是一本描述图书内容的示例文本。</p>
-</li>
-<li class="recommendation-item">
-<h2 class="book-title">图书标题3</h2>
-<p class="book-author">作者：作者名3</p>
-<p class="book-description">这是一本描述图书内容的示例文本。</p>
-</li>
-</ul>
-<script>
-</script>
+<h1>多语言支持模块</h1>
+<p>平台可以支持多种语言的图书编辑和阅读，用户可以根据需要切换语言设置。</p>
+<form id="languageForm" onsubmit="event.preventDefault();">
+<label for="language">选择语言:</label>
+<select id="language">
+<option value="zh">中文</option>
+<option value="en">English</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+</select>
+<input type="submit" value="切换语言" onclick="changeLanguage()">
+</form>
+<div id="result"></div>
 </body>
 </html>
             <style>

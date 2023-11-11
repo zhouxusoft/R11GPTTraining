@@ -1,110 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>图书搜索</title>
+<title>图书管理模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
-margin: 0;
-padding: 20px;
-background-color: #F7F7F7;
+margin: 20px;
 }
-h1 {
-font-size: 24px;
-font-weight: bold;
+h1, h2 {
+color: #333;
+}
+form {
 margin-bottom: 20px;
 }
-.search-form {
-margin-bottom: 20px;
-padding: 10px;
-background-color: #FFF;
-}
-.search-form input[type="text"] {
-width: 300px;
-padding: 8px;
-font-size: 16px;
-border: 1px solid #CCC;
-}
-.search-form select {
-padding: 8px;
-font-size: 16px;
-border: 1px solid #CCC;
-}
-.search-form button {
-padding: 8px 20px;
-font-size: 16px;
-border: none;
-background-color: #007bff;
-color: #FFF;
-cursor: pointer;
-}
-.search-results {
-background-color: #FFF;
-padding: 10px;
-}
-.search-results ul {
-list-style-type: none;
-padding: 0;
-}
-.search-results li {
-margin-bottom: 10px;
-}
-.search-results h3 {
-font-size: 18px;
+label {
+display: inline-block;
+width: 100px;
 font-weight: bold;
 margin-bottom: 5px;
 }
-.search-results p {
-margin: 0;
+input[type="text"], input[type="date"], textarea {
+width: 300px;
+padding: 5px;
+margin-bottom: 10px;
+}
+input[type="submit"] {
+padding: 10px 15px;
+background-color: #333;
+color: #fff;
+border: none;
+cursor: pointer;
+}
+ul {
+list-style-type: none;
+padding: 0;
+}
+li {
+margin-bottom: 10px;
 }
 </style>
+<script>
+</script>
 </head>
 <body>
-<h1>图书搜索</h1>
-<div class="search-form">
-<label for="keyword">关键字：</label>
-<input type="text" id="keyword" name="keyword" placeholder="请输入关键字">
-<label for="author">作者：</label>
-<input type="text" id="author" name="author" placeholder="请输入作者">
-<label for="category">类别：</label>
-<select id="category" name="category">
-<option value="">全部</option>
-<option value="小说">小说</option>
-<option value="历史">历史</option>
-<option value="科技">科技</option>
-<option value="教育">教育</option>
-</select>
-<button type="button">搜索</button>
-</div>
-<div class="search-results">
+<h1>图书管理模块</h1>
+<h2>添加图书</h2>
+<form>
+<label for="title">标题:</label>
+<input type="text" id="title" name="title" value="虚构标题"><br>
+<label for="author">作者:</label>
+<input type="text" id="author" name="author" value="虚构作者"><br>
+<label for="publish_date">发布日期:</label>
+<input type="date" id="publish_date" name="publish_date" value="2022-01-01"><br>
+<label for="description">描述:</label>
+<textarea id="description" name="description">虚构描述</textarea><br>
+<input type="submit" value="添加">
+</form>
+<h2>编辑图书</h2>
+<form>
+<label for="edit_title">标题:</label>
+<input type="text" id="edit_title" name="edit_title" value="虚构标题"><br>
+<label for="edit_author">作者:</label>
+<input type="text" id="edit_author" name="edit_author" value="虚构作者"><br>
+<label for="edit_publish_date">发布日期:</label>
+<input type="date" id="edit_publish_date" name="edit_publish_date" value="2022-01-01"><br>
+<label for="edit_description">描述:</label>
+<textarea id="edit_description" name="edit_description">虚构描述</textarea><br>
+<input type="submit" value="保存">
+<input type="submit" value="删除">
+</form>
+<h2>图书列表</h2>
 <ul>
-<li>
-<h3>图书标题1</h3>
-<p>作者：作者名字1</p>
-<p>类别：类别1</p>
-</li>
-<li>
-<h3>图书标题2</h3>
-<p>作者：作者名字2</p>
-<p>类别：类别2</p>
-</li>
-<li>
-<h3>图书标题3</h3>
-<p>作者：作者名字3</p>
-<p>类别：类别3</p>
-</li>
+<li>标题: 虚构标题 | 作者: 虚构作者 | 发布日期: 2022-01-01</li>
+<li>标题: 虚构标题 | 作者: 虚构作者 | 发布日期: 2022-01-01</li>
+<li>标题: 虚构标题 | 作者: 虚构作者 | 发布日期: 2022-01-01</li>
 </ul>
-</div>
-<script>
-const searchButton = document.querySelector('button');
-searchButton.addEventListener('click', function () {
-const keyword = document.getElementById('keyword').value;
-const author = document.getElementById('author').value;
-const category = document.getElementById('category').value;
-});
-</script>
 </body>
 </html>
             <style>

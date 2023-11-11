@@ -1,98 +1,122 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>图书借阅模块</title>
+<title>编辑器模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
-margin: 40px;
+margin: 30px;
 }
 h1 {
-text-align: center;
+color: #333;
 }
-.form-container {
-width: 500px;
-margin: 0 auto;
-}
-.form-group {
-margin-bottom: 20px;
-}
-label {
-display: block;
-font-weight: bold;
-margin-bottom: 10px;
-}
-input[type="text"],
-input[type="number"] {
+#editor {
 width: 100%;
-padding: 5px;
+height: 500px;
+border: 1px solid #ccc;
+padding: 10px;
 font-size: 16px;
 }
 .btn {
+display: inline-block;
 padding: 10px 20px;
-font-size: 16px;
-background-color: #4CAF50;
-color: white;
+background-color: #337ab7;
+color: #fff;
 border: none;
-cursor: pointer;
 }
 .btn:hover {
-background-color: #45a049;
+background-color: #23527c;
 }
 </style>
 </head>
 <body>
-<h1>图书借阅模块</h1>
-<div class="form-container">
-<form id="borrow-form" action="" method="POST">
-<div class="form-group">
-<label for="book-name">图书名称：</label>
-<input type="text" id="book-name" name="book-name" value="虚构的图书名称" required>
+<h1>编辑器模块</h1>
+<div id="editor" contenteditable="true">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+<p>Sed iaculis posuere dui, a facilisis arcu scelerisque sed.</p>
+<img src="#" alt="虚构图片">
+<table>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+<th>Header 3</th>
+</tr>
+<tr>
+<td>Value 1</td>
+<td>Value 2</td>
+<td>Value 3</td>
+</tr>
+</table>
 </div>
-<div class="form-group">
-<label for="user-id">用户ID：</label>
-<input type="text" id="user-id" name="user-id" value="虚构的用户ID" required>
+<br>
+<input type="file" id="image-upload" accept="image/*">
+<button class="btn">插入图片</button>
+<br>
+<br>
+<div>
+<textarea id="table-input" rows="3" cols="50" placeholder="在此输入表格内容"></textarea>
+<button class="btn">插入表格</button>
 </div>
-<div class="form-group">
-<label for="borrow-date">借阅日期：</label>
-<input type="date" id="borrow-date" name="borrow-date" required>
-</div>
-<div class="form-group">
-<label for="return-date">归还日期：</label>
-<input type="date" id="return-date" name="return-date" required>
-</div>
-<div class="form-group">
-<label for="status">借阅状态：</label>
-<select id="status" name="status" required>
-<option value="借出">借出</option>
-<option value="归还">归还</option>
-</select>
-</div>
-<div class="form-group">
-<label for="comments">备注：</label>
-<textarea id="comments" name="comments" rows="4" cols="30"></textarea>
-</div>
-<div class="form-group">
-<input type="submit" value="借阅" class="btn">
-</div>
-</form>
-</div>
+<br>
+<textarea id="text-input" rows="5" cols="50" placeholder="在此输入文本内容"></textarea>
+<br>
+<br>
+<button class="btn">添加文本</button>
+<button class="btn">删除文本</button>
+<button class="btn">修改文本</button>
+<button class="btn">格式化文本</button>
+<br>
+<br>
+<input type="checkbox" id="bold-checkbox">
+<label for="bold-checkbox">粗体</label>
+<input type="checkbox" id="italic-checkbox">
+<label for="italic-checkbox">斜体</label>
+<input type="checkbox" id="underline-checkbox">
+<label for="underline-checkbox">下划线</label>
+<br>
+<br>
+<label for="font-size-range">字体大小:</label>
+<input type="range" id="font-size-range" min="12" max="24" step="2">
+<br>
+<br>
+<label for="line-height-range">行高:</label>
+<input type="range" id="line-height-range" min="1" max="2" step="0.1">
+<br>
+<br>
+<label for="text-color-input">文字颜色:</label>
+<input type="text" id="text-color-input" placeholder="请输入颜色值">
+<br>
+<br>
+<label for="bg-color-input">背景颜色:</label>
+<input type="text" id="bg-color-input" placeholder="请输入颜色值">
 <script>
-document.getElementById("borrow-form").addEventListener("submit", function(e) {
-e.preventDefault();
-var bookName = document.getElementById("book-name").value;
-var userId = document.getElementById("user-id").value;
-var borrowDate = document.getElementById("borrow-date").value;
-var returnDate = document.getElementById("return-date").value;
-var status = document.getElementById("status").value;
-var comments = document.getElementById("comments").value;
-console.log("图书名称:", bookName);
-console.log("用户ID:", userId);
-console.log("借阅日期:", borrowDate);
-console.log("归还日期:", returnDate);
-console.log("借阅状态:", status);
-console.log("备注:", comments);
-alert("图书借阅成功！");
+document.getElementById('image-upload').addEventListener('change', function (event) {
+});
+document.getElementById('insert-image-button').addEventListener('click', function (event) {
+});
+document.getElementById('insert-table-button').addEventListener('click', function (event) {
+});
+document.getElementById('add-text-button').addEventListener('click', function (event) {
+});
+document.getElementById('delete-text-button').addEventListener('click', function (event) {
+});
+document.getElementById('modify-text-button').addEventListener('click', function (event) {
+});
+document.getElementById('format-text-button').addEventListener('click', function (event) {
+});
+document.getElementById('bold-checkbox').addEventListener('change', function (event) {
+});
+document.getElementById('italic-checkbox').addEventListener('change', function (event) {
+});
+document.getElementById('underline-checkbox').addEventListener('change', function (event) {
+});
+document.getElementById('font-size-range').addEventListener('change', function (event) {
+});
+document.getElementById('line-height-range').addEventListener('change', function (event) {
+});
+document.getElementById('text-color-input').addEventListener('change', function (event) {
+});
+document.getElementById('bg-color-input').addEventListener('change', function (event) {
 });
 </script>
 </body>

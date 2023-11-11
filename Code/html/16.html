@@ -1,96 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>数据备份与恢复</title>
+<meta charset="UTF-8">
+<title>在线协作模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
-background-color: #f5f5f5;
 }
-.container {
-width: 500px;
-margin: 0 auto;
-padding: 20px;
-background-color: #fff;
-border: 1px solid #ccc;
+h1 {
+text-align: center;
 }
-h2 {
-color: #333;
-}
-label {
-display: block;
+.form-row {
 margin-bottom: 10px;
+}
+.form-row label {
+display: inline-block;
+width: 120px;
 font-weight: bold;
 }
-input[type="text"],
-select {
-width: 100%;
+.form-row input[type="text"],
+.form-row input[type="number"],
+.form-row input[type="email"] {
+width: 200px;
 padding: 5px;
-margin-bottom: 10px;
 }
-.checkbox-container {
-margin-bottom: 10px;
+.form-row input[type="checkbox"] {
+margin-right: 5px;
 }
-button {
-padding: 10px 20px;
+.form-row button {
+padding: 8px 16px;
 background-color: #4CAF50;
-color: #fff;
+color: white;
 border: none;
+border-radius: 4px;
 cursor: pointer;
 }
-button:hover {
+.form-row button:hover {
 background-color: #45a049;
 }
 </style>
+<script>
+</script>
 </head>
 <body>
-<div class="container">
-<h2>数据备份与恢复</h2>
-<form>
-<label for="backup-frequency">备份频率:</label>
-<select id="backup-frequency">
-<option value="daily">每日</option>
-<option value="weekly">每周</option>
-<option value="monthly">每月</option>
-</select>
-<label for="backup-time">备份时间:</label>
-<input type="time" id="backup-time" placeholder="选择备份时间" required>
-<label for="backup-location">备份位置:</label>
-<input type="text" id="backup-location" placeholder="输入备份位置" required>
-<div class="checkbox-container">
-<input type="checkbox" id="incremental-backup" checked>
-<label for="incremental-backup">增量备份</label>
+<h1>在线协作模块</h1>
+<div class="form-row">
+<label for="bookName">图书名称:</label>
+<input type="text" id="bookName" value="Sample Book Name">
 </div>
-<label for="backup-retention">备份保留天数:</label>
-<input type="number" id="backup-retention" min="1" max="365" placeholder="输入备份保留天数" required>
-<button type="submit">开始备份</button>
-<button type="button">恢复备份</button>
-</form>
+<div class="form-row">
+<label for="collaborators">协作者:</label>
+<input type="text" id="collaborators" value="user1, user2, user3">
 </div>
-<script>
-function handleBackupFormSubmit(event) {
-event.preventDefault();
-var backupFrequency = document.getElementById("backup-frequency").value;
-var backupTime = document.getElementById("backup-time").value;
-var backupLocation = document.getElementById("backup-location").value;
-var incrementalBackup = document.getElementById("incremental-backup").checked;
-var backupRetention = document.getElementById("backup-retention").value;
-console.log("执行备份操作");
-console.log("备份频率: " + backupFrequency);
-console.log("备份时间: " + backupTime);
-console.log("备份位置: " + backupLocation);
-console.log("增量备份: " + incrementalBackup);
-console.log("备份保留天数: " + backupRetention);
-}
-function handleRestoreButtonClick(event) {
-event.preventDefault();
-console.log("执行恢复备份操作");
-}
-var backupForm = document.querySelector("form");
-backupForm.addEventListener("submit", handleBackupFormSubmit);
-var restoreButton = document.querySelector("button[type='button']");
-restoreButton.addEventListener("click", handleRestoreButtonClick);
-</script>
+<div class="form-row">
+<label for="versionControl">版本控制:</label>
+<input type="checkbox" id="versionControl" checked>
+</div>
+<div class="form-row">
+<button type="submit">开始协作</button>
+</div>
 </body>
 </html>
             <style>

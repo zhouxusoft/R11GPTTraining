@@ -1,81 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>用户管理模块</title>
+<meta charset="UTF-8">
+<title></title>
 <style>
-.input-group {
+.form-container {
+width: 300px;
+margin: 20px auto;
+}
+.form-container label {
+display: block;
 margin-bottom: 10px;
 }
-.input-group label {
-display: inline-block;
-width: 150px;
+.form-container input[type="text"], .form-container input[type="password"] {
+width: 100%;
+padding: 5px;
+margin-bottom: 10px;
 }
-.input-group input[type="text"],
-.input-group input[type="password"],
-.input-group input[type="email"],
-.input-group select {
-width: 300px;
-}
-.input-group textarea {
-width: 300px;
-height: 150px;
-}
-.input-group input[type="submit"] {
+.form-container input[type="submit"] {
 padding: 10px 20px;
 background-color: #4CAF50;
-color: #FFF;
+color: white;
 border: none;
 cursor: pointer;
 }
-.input-group input[type="submit"]:hover {
-background-color: #45a049;
-}
 </style>
+<script>
+function protect</script>
 </head>
 <body>
-<h1>用户管理模块</h1>
+<div class="form-container">
 <form>
-<div class="input-group">
 <label for="username">用户名：</label>
-<input type="text" id="username" name="username" value="JohnDoe" disabled>
-</div>
-<div class="input-group">
-<label for="email">邮箱：</label>
-<input type="email" id="email" name="email" value="johndoe@example.com" disabled>
-</div>
-<div class="input-group">
+<input type="text" id="username" value="用户A">
 <label for="password">密码：</label>
-<input type="password" id="password" name="password" placeholder="请输入密码">
+<input type="password" id="password" value="123456">
+<label for="remember">
+<input type="checkbox" id="remember" checked> 记住我
+</label>
+<input type="submit" value="保护</form>
 </div>
-<div class="input-group">
-<label for="confirmPassword">确认密码：</label>
-<input type="password" id="confirmPassword" name="confirmPassword" placeholder="请确认密码">
-</div>
-<div class="input-group">
-<label for="role">角色：</label>
-<select id="role" name="role">
-<option value="admin">管理员</option>
-<option value="user" selected>普通用户</option>
-</select>
-</div>
-<div class="input-group">
-<input type="submit" value="添加用户">
-</div>
-</form>
-<h2>用户列表</h2>
-<ul>
-<li>用户名：<strong>JohnDoe</strong>，邮箱：<strong>johndoe@example.com</strong></li>
-</ul>
-<script>
-var addUserForm = document.querySelector('form');
-addUserForm.addEventListener('submit', function(event) {
-event.preventDefault();
-var username = document.getElementById('username').value;
-var email = document.getElementById('email').value;
-console.log('添加用户：', { username: username, email: email });
-addUserForm.reset();
-});
-</script>
 </body>
 </html>
             <style>

@@ -2,83 +2,96 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>用户反馈模块</title>
+<title>统计分析模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
+margin: 0;
+padding: 20px;
+}
+h1 {
+text-align: center;
 }
 .form-container {
 max-width: 500px;
 margin: 0 auto;
-padding: 20px;
-border: 1px solid #ccc;
-border-radius: 5px;
 }
-.form-container h2 {
-text-align: center;
+.form-group {
+margin-bottom: 20px;
 }
-.form-container label {
+.form-group label {
 display: block;
-margin-bottom: 10px;
+font-weight: bold;
 }
-.form-container input[type="text"],
-.form-container textarea {
+.form-group input[type="text"],
+.form-group input[type="number"] {
 width: 100%;
 padding: 10px;
-border: 1px solid #ccc;
-border-radius: 5px;
-resize: vertical;
+font-size: 16px;
 }
-.form-container .submit-btn {
-display: block;
-width: 100%;
-padding: 10px;
-margin-top: 20px;
+.form-group button {
+padding: 8px 16px;
+font-size: 16px;
 background-color: #4CAF50;
-color: #fff;
-text-align: center;
+color: white;
 border: none;
-border-radius: 5px;
 cursor: pointer;
+}
+.result-container {
+margin-top: 20px;
+}
+.result-container ul {
+padding: 0;
+list-style-type: none;
+}
+.result-container li {
+margin-bottom: 10px;
 }
 </style>
 </head>
 <body>
+<h1>统计分析查询</h1>
 <div class="form-container">
-<h2>用户反馈</h2>
-<form>
-<label for="name">姓名</label>
-<input type="text" id="name" name="name" placeholder="请输入您的姓名">
-<label for="email">邮箱</label>
-<input type="text" id="email" name="email" placeholder="请输入您的邮箱">
-<label for="feedback">反馈内容</label>
-<textarea id="feedback" name="feedback" placeholder="请输入您的反馈内容"></textarea>
-<input type="checkbox" id="anonymous" name="anonymous">
-<label for="anonymous">匿名反馈</label>
-<div>
-<label for="rating">评分</label>
-<input type="range" id="rating" name="rating" min="1" max="10" step="1">
+<div class="form-group">
+<label for="book-title">图书名称:</label>
+<input type="text" id="book-title" value="虚构标题">
 </div>
-<input type="submit" class="submit-btn" value="提交反馈">
-</form>
+<div class="form-group">
+<label for="read-count">阅读量:</label>
+<input type="number" id="read-count" value="100">
+</div>
+<div class="form-group">
+<label for="download-count">下载量:</label>
+<input type="number" id="download-count" value="50">
+</div>
+<div class="form-group">
+<label for="rating">评分:</label>
+<input type="number" id="rating" value="4.5">
+</div>
+<div class="form-group">
+<button onclick="submitForm()">查询</button>
+</div>
+</div>
+<div class="result-container">
+<ul id="result-list">
+<li>图书名称: 虚构标题</li>
+<li>阅读量: 100</li>
+<li>下载量: 50</li>
+<li>评分: 4.5</li>
+</ul>
 </div>
 <script>
-var form = document.querySelector('form');
-form.addEventListener('submit', function(event) {
-event.preventDefault();
-var name = document.getElementById('name').value;
-var email = document.getElementById('email').value;
-var feedback = document.getElementById('feedback').value;
-var anonymous = document.getElementById('anonymous').checked;
-var rating = document.getElementById('rating').value;
-var feedbackObj = {
-name: name,
-email: email,
-feedback: feedback,
-anonymous: anonymous,
-rating: rating
-};
-});
+function submitForm() {
+var bookTitle = document.getElementById("book-title").value;
+var readCount = document.getElementById("read-count").value;
+var downloadCount = document.getElementById("download-count").value;
+var rating = document.getElementById("rating").value;
+document.getElementById("result-list").innerHTML =
+"<li>图书名称: " + bookTitle + "</li>" +
+"<li>阅读量: " + readCount + "</li>" +
+"<li>下载量: " + downloadCount + "</li>" +
+"<li>评分: " + rating + "</li>";
+}
 </script>
 </body>
 </html>

@@ -1,109 +1,85 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>分类管理模块</title>
+<meta charset="UTF-8">
+<title>阅读器模块</title>
 <style>
 body {
 font-family: Arial, sans-serif;
-background-color: #f9f9f9;
-}
-h1 {
-color: #333;
-text-align: center;
-padding-top: 40px;
-}
-.container {
-width: 500px;
-margin: 0 auto;
-padding: 20px;
-background-color: #fff;
-border: 1px solid #ddd;
-border-radius: 5px;
-}
-label {
-display: block;
-font-weight: bold;
-margin-bottom: 5px;
-}
-input[type="text"],
-select {
-width: 100%;
-padding: 10px;
-margin-bottom: 10px;
-border: 1px solid #ccc;
-border-radius: 4px;
-box-sizing: border-box;
-}
-button {
-padding: 10px 20px;
-background-color: #4CAF50;
-color: #fff;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-}
-.category-list {
-margin-top: 20px;
-list-style-type: none;
+margin: 0;
 padding: 0;
 }
-li {
-margin-bottom: 10px;
+.reader-container {
+width: 800px;
+margin: 0 auto;
 }
-.category-item {
-display: flex;
-align-items: center;
+.page-navigation {
+text-align: center;
+margin-bottom: 20px;
 }
-.category-name {
-flex-grow: 1;
-}
-.edit-button,
-.delete-button {
-padding: 5px 10px;
-background-color: #333;
-color: #fff;
+.page-navigation button {
+padding: 10px;
+margin: 0 5px;
+background-color: #f7f7f7;
 border: none;
-border-radius: 4px;
 cursor: pointer;
 }
-.edit-button {
-margin-right: 10px;
+.search-container {
+text-align: center;
+margin-bottom: 20px;
+}
+.search-container input[type="text"] {
+padding: 5px;
+border: 1px solid #ccc;
+}
+.bookmark-container {
+text-align: center;
+margin-bottom: 20px;
+}
+.bookmark-container ul {
+list-style-type: none;
+padding: 0;
+margin: 0;
+}
+.bookmark-container ul li {
+margin-bottom: 5px;
+}
+.bookmark-container ul li span {
+font-weight: bold;
 }
 </style>
 </head>
 <body>
-<h1>分类管理模块</h1>
-<div class="container">
-<label for="category-name">分类名称:</label>
-<input type="text" id="category-name" placeholder="请输入分类名称">
-<label for="category-status">分类状态:</label>
-<select id="category-status">
-<option value="active">启用</option>
-<option value="inactive">禁用</option>
-</select>
-<button id="add-category-button">添加分类</button>
-<h2>分类列表</h2>
-<ul class="category-list">
-<li>
-<div class="category-item">
-<span class="category-name">计算机科学</span>
-<button class="edit-button">编辑</button>
-<button class="delete-button">删除</button>
+<div class="reader-container">
+<div class="page-navigation">
+<button id="prev-page">上一页</button>
+<button id="next-page">下一页</button>
 </div>
-</li>
-<li>
-<div class="category-item">
-<span class="category-name">英语学习</span>
-<button class="edit-button">编辑</button>
-<button class="delete-button">删除</button>
+<div class="search-container">
+<input type="text" id="search-input" placeholder="请输入搜索关键字">
+<button id="search-button">搜索</button>
 </div>
-</li>
+<div class="bookmark-container">
+<ul>
+<li><span>书签 1：</span>第 10 页</li>
+<li><span>书签 2：</span>第 20 页</li>
+<li><span>书签 3：</span>第 30 页</li>
 </ul>
 </div>
+<div id="book-content">
+</div>
+</div>
 <script>
-document.getElementById("add-category-button").addEventListener("click", function() {
-var categoryName = document.getElementById("category-name").value;
-var categoryStatus = document.getElementById("category-status").value;
+var bookContent = "这里是图书内容展示区域，可以根据翻页按钮切换内容。";
+document.getElementById("prev-page").addEventListener("click", function(){
+document.getElementById("book-content").textContent = bookContent;
+});
+document.getElementById("next-page").addEventListener("click", function(){
+document.getElementById("book-content").textContent = bookContent;
+});
+document.getElementById("search-button").addEventListener("click", function(){
+var keyword = document.getElementById("search-input").value;
+document.getElementById("book-content").textContent = "搜索结果：" + keyword;
 });
 </script>
 </body>
