@@ -114,6 +114,7 @@
         let softname = ''
         let topnavcolor = ''
         let leftnavcolor = ''
+        let menuiconfilename = ''
         fetch('./config.json')
             .then(response => response.json())
             .then(data => {
@@ -121,6 +122,7 @@
                 softname = data.soft_name
                 topnavcolor = data.top_nav_color
                 leftnavcolor = data.left_nav_color
+                menuiconfilename = data.menu_icon_file_name
                 setLeftNav()
             })
             .catch(error => {
@@ -138,7 +140,7 @@
             menulist.innerHTML += '<div class="whitebox"></div>'
             for (let i = 0; i < modulelist.length; i++) {
                 menulist.innerHTML += `<div class="menuitem" id="menuitem${i}">
-                                        <img src="./icons/menu.svg" class="menuicon">
+                                        <img src="./icons/${menuiconfilename}" class="menuicon">
                                         <div class="menuname">${modulelist[i]}</div>
                                     </div>`
             }
