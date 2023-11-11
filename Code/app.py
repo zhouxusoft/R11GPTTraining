@@ -5,12 +5,13 @@ import random
 with open('options.json', 'r', encoding='utf-8') as f:
     data = json.load(f)
 
+# 通过随机数，随机从列表中获得一个用户名
 random_number = random.randint(0, len(data['user_name_list']) - 1)
 user_info_name = data['user_name_list'][random_number]
 
+# 通过随机数，随机从列表中获得一组导航颜色
 random_number = random.randint(0, len(data['nav_color_group']) - 1)
 nav_color_group = data['nav_color_group'][random_number]
-print(nav_color_group)
 
 # 打开 config.json 文件并读取内容
 with open('config.json', 'r', encoding='utf-8') as f:
