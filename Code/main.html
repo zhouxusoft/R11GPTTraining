@@ -116,7 +116,7 @@
         <div class="softnametitle"></div>
         <div class="userinfo">
             <div class="userinfoname">Admin</div>
-            <img src="./icons/caret-down.svg" class="userinfodown">
+            <img src="./icons/user-down.svg" class="userinfodown">
             <img src="./icons/user.svg" class="userinfoicon">
         </div>
     </div>
@@ -135,7 +135,7 @@
         let softname = ''
         let topnavcolor = ''
         let leftnavcolor = ''
-        let menuiconfilename = ''
+        let menuicon = ''
         let username = ''
         let usericon = ''
         fetch('./config.json')
@@ -145,7 +145,7 @@
                 softname = data.soft_name
                 topnavcolor = data.top_nav_color
                 leftnavcolor = data.left_nav_color
-                menuiconfilename = data.menu_icon_file_name
+                menuicon = data.menu_icon
                 username = data.user_info_name
                 usericon = data.user_info_icon
                 setLeftNav()
@@ -165,7 +165,7 @@
             menulist.innerHTML += '<div class="whitebox"></div>'
             for (let i = 0; i < modulelist.length; i++) {
                 menulist.innerHTML += `<div class="menuitem" id="menuitem${i}">
-                                        <img src="./icons/${menuiconfilename}" class="menuicon">
+                                        <img src="./icons/${menuicon}" class="menuicon">
                                         <div class="menuname">${modulelist[i]}</div>
                                     </div>`
             }

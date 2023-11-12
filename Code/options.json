@@ -138,13 +138,29 @@
         ["#556B2F", "#6B8E23"]
     ],
 
-    "menu_icon_file_name_list": [
-        "menu.svg",
-        "",
-        "",
-        "",
-        "",
-        "",
-        
+    "menu_icon_list": [
+        "menu-0.svg",
+        "menu-1.svg",
+        "menu-2.svg",
+        "menu-3.svg",
+        "menu-4.svg",
+        "menu-5.svg",
+        "menu-6.svg",
+        "menu-7.svg",
+        "menu-8.svg",
+        "menu-9.svg"
+    ],
+
+    "user_info_icon_list": [
+        "user-0.svg",
+        "user-1.svg",
+        "user-2.svg",
+        "user-3.svg",
+        "user-4.svg",
+        "user-5.svg",
+        "user-6.svg",
+        "user-7.svg",
+        "user-8.svg",
+        "user-9.svg"
     ]
 }

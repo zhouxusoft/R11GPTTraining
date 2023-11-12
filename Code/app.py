@@ -1,25 +1,11 @@
 import json
 import random
 
-# 打开 options.json 文件并读取内容
-with open('options.json', 'r', encoding='utf-8') as f:
-    data = json.load(f)
-
-# 通过随机数，随机从列表中获得一个用户名
-random_number = random.randint(0, len(data['user_name_list']) - 1)
-user_info_name = data['user_name_list'][random_number]
-
-# 通过随机数，随机从列表中获得一组导航颜色
-random_number = random.randint(0, len(data['nav_color_group']) - 1)
-nav_color_group = data['nav_color_group'][random_number]
-
-# 打开 config.json 文件并读取内容
-with open('config.json', 'r', encoding='utf-8') as f:
-    config_data = json.load(f)
-
-# 修改 config.json 字段 中的内容
-config_data['soft_name'] = '电子图书设计平台'
-config_data['module_list'] = [
+'''
+    可在此自行配置软件名称以及功能模块列表
+'''
+soft_name = '电子图书设计平台'
+module_list = [
     "图书管理",
     "用户管理",
     "分类管理",
@@ -41,11 +27,43 @@ config_data['module_list'] = [
     "用户反馈",
     "数据备份与恢复"
 ]
+
+'''
+    随机获取各种样式
+'''
+
+# 打开 options.json 文件并读取内容
+with open('options.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
+
+# 通过随机数，随机从列表中获得一个用户名
+random_number = random.randint(0, len(data['user_name_list']) - 1)
+user_info_name = data['user_name_list'][random_number]
+
+# 通过随机数，随机从列表中获得一组导航颜色
+random_number = random.randint(0, len(data['nav_color_group']) - 1)
+nav_color_group = data['nav_color_group'][random_number]
+
+# 通过随机数，随机从列表中获得一个菜单图标
+random_number = random.randint(0, len(data['menu_icon_list']) - 1)
+menu_icon = data['menu_icon_list'][random_number]
+
+# 通过随机数，随机从列表中获得一个用户头像
+random_number = random.randint(0, len(data['user_info_icon_list']) - 1)
+user_info_icon = data['user_info_icon_list'][random_number]
+
+# 打开 config.json 文件并读取内容
+with open('config.json', 'r', encoding='utf-8') as f:
+    config_data = json.load(f)
+
+# 修改 config.json 字段 中的内容
+config_data['soft_name'] = soft_name
+config_data['module_list'] = module_list
 config_data['top_nav_color'] = nav_color_group[0]
 config_data['left_nav_color'] = nav_color_group[1]
-config_data['menu_icon_file_name'] = 'menu.svg'
+config_data['menu_icon'] = menu_icon
 config_data['user_info_name'] = user_info_name
-
+config_data['user_info_icon'] = user_info_icon
 
 
 # 将修改后的内容写回 config.json 文件中

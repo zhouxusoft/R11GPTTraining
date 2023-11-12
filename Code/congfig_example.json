@@ -1,8 +1,9 @@
 {
     "soft_name": "",
     "module_list": [],
-    "top_nav_color": "#24648F",
-    "left_nav_color": "#6290AF",
-    "menu_icon_file_name": "menu.svg",
-    "user_info_name": "Admin"
+    "top_nav_color": "#2E8B57",
+    "left_nav_color": "#3CB371",
+    "menu_icon": "menu-0.svg",
+    "user_info_name": "ZhangSan",
+    "user_info_icon": "user-0.svg"
 }
