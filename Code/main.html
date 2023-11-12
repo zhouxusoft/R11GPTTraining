@@ -29,6 +29,7 @@
             font-size: 24px;
             color: white;
             font-weight: 600;
+            cursor: pointer;
         }
 
         .container {
@@ -117,7 +118,7 @@
         <div class="userinfo">
             <div class="userinfoname">Admin</div>
             <img src="./icons/user-down.svg" class="userinfodown">
-            <img src="./icons/user.svg" class="userinfoicon">
+            <img src="./icons/user-0.svg" class="userinfoicon">
         </div>
     </div>
     <div class="container">
@@ -151,14 +152,19 @@
                 setLeftNav()
             })
             .catch(error => {
-                console.error('读取配置文件时出错:', error);
+                console.error('读取配置文件时出错:', error)
             })
         function setLeftNav() {
             for (let i = 0; i < modulelist.length; i++) {
-                modulelist[i] = modulelist[i].replace('模块', '')
+                if (modulelist[i].name.endsWith('模块')) {
+                    modulelist[i].name = modulelist[i].name.slice(0, -2)
+                }
             }
             const softnametitle = document.getElementsByClassName('softnametitle')[0]
             const menulist = document.getElementsByClassName('menulist')[0]
+            softnametitle.addEventListener('click', function () {
+                location.href = './mindmap.html'
+            })
             document.title = softname
             softnametitle.innerHTML = softname
             menulist.innerHTML = ''
@@ -166,7 +172,7 @@
             for (let i = 0; i < modulelist.length; i++) {
                 menulist.innerHTML += `<div class="menuitem" id="menuitem${i}">
                                         <img src="./icons/${menuicon}" class="menuicon">
-                                        <div class="menuname">${modulelist[i]}</div>
+                                        <div class="menuname">${modulelist[i].name}</div>
                                     </div>`
             }
             menulist.innerHTML += '<div class="whitebox2"></div>'
@@ -176,7 +182,6 @@
                 menuitem[i].addEventListener('click', function (e) {
                     location.hash = '#page=' + i
                     clickmenuid = menuitem[i].id.replace('menuitem', '')
-                    console.log(clickmenuid);
                     mainmodulepage.src = `./html/${clickmenuid}.html`
                     for (let j = 0; j < menuitem.length; j++) {
                         menuitem[j].classList.remove('active')
@@ -186,6 +191,8 @@
             }
             if (location.hash == '') {
                 location.hash = '#page=0'
+            } else if (location.hash == '#page=20') {
+                location.href = './mindmap.html'
             }
             currentpage = location.hash.split('=')[1]
             mainmodulepage.src = `./html/${currentpage}.html`
@@ -201,7 +208,7 @@
             leftnav.style.backgroundColor = leftnavcolor
             userinfoname.innerHTML = username
             userinfoicon.src = `./icons/${usericon}`
-            const styleElement = document.createElement('style');
+            const styleElement = document.createElement('style')
             const cssRule = `.active { background-color: ${topnavcolor};}
                              .menuitem:hover { background-color: ${topnavcolor};}`
             styleElement.appendChild(document.createTextNode(cssRule))

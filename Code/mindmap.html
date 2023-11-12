@@ -19,8 +19,6 @@
         .container {
             width: 1280px;
             height: 560px;
-            /* border: 2px solid steelblue;
-            border-radius: 0.25rem; */
             position: relative;
         }
 
@@ -41,6 +39,7 @@
             top: 231px;
             font-size: 18px;
             font-weight: 600;
+            cursor: pointer;
         }
 
         .purpose {
@@ -190,6 +189,9 @@
         const target_text = document.getElementsByClassName("target_text")[0]
         const main_text = document.getElementsByClassName("main_text")[0]
         const tech_text = document.getElementsByClassName("tech_text")[0]
+        soft_name.addEventListener('click', function () {
+            location.href = './main.html'
+        })
         fetch('./config.json')
             .then(response => response.json())
             .then(data => {
