@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    .node circle {
+        fill: #fff;
+        stroke: steelblue;
+        stroke-width: 3px;
+    }
+
+    .node text {
+        font-size: 24px;
+        font-family: sans-serif;
+    }
+
+    .link {
+        fill: none;
+        stroke: green;
+        stroke-width: 2px;
+    }
+</style>
+
+<body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+
+        var treeData = {
+            "name": "图书管理系统功能",
+            "children": [
+                {
+                    "name": "图书入库管理",
+                    "children": [
+                        {
+                            "name": "图书信息录入"
+                        },
+                        {
+                            "name": "标签打印"
+                        },
+                        {
+                            "name": "入库登记"
+                        }
+                    ]
+                },
+                {
+                    "name": "智能导航系统"
+                },
+                {
+                    "name": "多语言支持"
+                },
+                {
+                    "name": "跨平台适配",
+                    "children": [
+                        {
+                            "name": "PC端"
+                        },
+                        {
+                            "name": "移动端"
+                        }
+                    ]
+                },
+                {
+                    "name": "联机分享与互动"
+                },
+                {
+                    "name": "图书标签管理",
+                    "children": [
+                        {
+                            "name": "标签添加"
+                        },
+                        {
+                            "name": "修改"
+                        },
+                        {
+                            "name": "删除"
+                        }
+                    ]
+                },
+                {
+                    "name": "自助借还书柜管理",
+                    "children": [
+                        {
+                            "name": "流程控制"
+                        },
+                        {
+                            "name": "安全监控"
+                        }
+                    ]
+                },
+                {
+                    "name": "图书推荐系统",
+                    "children": [
+                        {
+                            "name": "相关图书推荐"
+                        },
+                        {
+                            "name": "提高图书借阅率"
+                        },
+                        {
+                            "name": "提高读者满意度"
+                        }
+                    ]
+                }
+            ]
+        }
+
+        var margin = { top: 20, right: 120, bottom: 20, left: 120 },
+            width = 1280 - margin.left - margin.right,
+            height = 720 - margin.top - margin.bottom;
+
+        var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.right + margin.left)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate("
+                + margin.left + "," + margin.top + ")");
+
+        var i = 0,
+            duration = 750,
+            root;
+
+        root = d3.hierarchy(treeData, function (d) { return d.children; });
+        root.x0 = height / 2;
+        root.y0 = 0;
+
+        update(root);
+
+        function diagonal(s, d) {
+            return `M ${s.y},${s.x} C ${(s.y + d.y) / 2},${s.x} ${(s.y + d.y) / 2},${d.x} ${d.y},${d.x}`;
+        }
+
+        function update(source) {
+            var treeLayout = d3.tree().size([width, height]);
+            var treeData = treeLayout(root);
+
+            var links = svg.selectAll('path.link')
+                .data(treeData.links(), function (d) { return d.target.id; });
+
+            links.enter().append('path')
+                .attr('class', 'link')
+                .merge(links)
+                .transition()
+                .duration(duration)
+                .attr('d', function (d) { return diagonal(d.source, d.target); });
+
+            links.exit()
+                .remove();
+
+            var nodes = svg.selectAll('g.node')
+                .data(treeData.descendants(), function (d) { return d.id || (d.id = ++i); });
+
+            var nodeEnter = nodes.enter().append('g')
+                .attr('class', 'node')
+                .attr("transform", function (d) {
+                    return "translate(" + source.y + "," + source.x + ")";
+                });
+
+            nodeEnter.append('circle')
+                .attr('r', 1e-6);
+
+            nodeEnter.append('text')
+                .attr("dy", ".35em")
+                .attr("x", function (d) {
+                    return d.children || d._children ? -10 : 10;
+                })
+                .attr("text-anchor", function (d) {
+                    return d.children || d._children ? "end" : "start";
+                })
+                .text(function (d) { return d.data.name; });
+
+            var nodeUpdate = nodeEnter.merge(nodes);
+
+            nodeUpdate.transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + d.y + "," + d.x + ")";
+                });
+
+            nodeUpdate.select('circle')
+                .attr('r', 10);
+
+            nodeUpdate.select('text')
+                .style("fill-opacity", 1);
+
+            nodes.exit().transition()
+                .duration(duration)
+                .attr("transform", function (d) {
+                    return "translate(" + source.y + "," + source.x + ")";
+                })
+                .remove();
+        }
+    </script>
