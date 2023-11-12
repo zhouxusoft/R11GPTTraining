@@ -20,6 +20,7 @@
             width: 1280px;
             height: 560px;
             position: relative;
+            color: steelblue
         }
 
         .soft_name {
@@ -28,8 +29,7 @@
             width: 200px;
             min-height: 60px;
             height: fit-content;
-            border: 2px solid steelblue;
-            color: steelblue;
+            border: 2px solid;
             border-radius: 0.25rem;
             display: flex;
             text-align: center;
@@ -45,8 +45,7 @@
         .purpose {
             width: 150px;
             height: 150px;
-            border-top: 2px solid steelblue;
-            color: steelblue;
+            border-top: 2px solid;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -63,8 +62,7 @@
             width: 400px;
             min-height: 80px;
             height: fit-content;
-            border: 2px solid steelblue;
-            color: steelblue;
+            border: 2px solid;
             border-radius: 0.25rem;
             display: flex;
             align-items: center;
@@ -76,8 +74,7 @@
         .target {
             width: 150px;
             height: 150px;
-            border-bottom: 2px solid steelblue;
-            color: steelblue;
+            border-bottom: 2px solid;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -94,8 +91,7 @@
             width: 400px;
             min-height: 80px;
             height: fit-content;
-            border: 2px solid steelblue;
-            color: steelblue;
+            border: 2px solid;
             border-radius: 0.25rem;
             display: flex;
             align-items: center;
@@ -107,8 +103,7 @@
         .main {
             width: 150px;
             height: 150px;
-            border-top: 2px solid steelblue;
-            color: steelblue;
+            border-top: 2px solid;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -125,8 +120,7 @@
             width: 400px;
             min-height: 80px;
             height: fit-content;
-            border: 2px solid steelblue;
-            color: steelblue;
+            border: 2px solid;
             border-radius: 0.25rem;
             display: flex;
             align-items: center;
@@ -138,8 +132,7 @@
         .tech {
             width: 150px;
             height: 150px;
-            border-bottom: 2px solid steelblue;
-            color: steelblue;
+            border-bottom: 2px solid;
             display: flex;
             text-align: center;
             justify-content: center;
@@ -156,8 +149,7 @@
             width: 400px;
             min-height: 80px;
             height: fit-content;
-            border: 2px solid steelblue;
-            color: steelblue;
+            border: 2px solid;
             border-radius: 0.25rem;
             display: flex;
             align-items: center;
@@ -184,6 +176,7 @@
     </div>
 
     <script>
+        const container = document.getElementsByClassName("container")[0]
         const soft_name = document.getElementsByClassName("soft_name")[0]
         const purpose_text = document.getElementsByClassName("purpose_text")[0]
         const target_text = document.getElementsByClassName("target_text")[0]
@@ -200,6 +193,7 @@
                 target = data.target
                 main = data.main
                 tech = data.tech
+                color = data.top_nav_color
                 setData()
             })
             .catch(error => {
@@ -211,6 +205,7 @@
             target_text.innerHTML = target
             main_text.innerHTML = main
             tech_text.innerHTML = tech
+            container.style.color = color
         }
     </script>
 </body>
