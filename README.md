@@ -5,7 +5,9 @@
 #### 软件外观框架
 
 - Code/main.html 窗口大小建议 1280*720
-- mindmap/d3.html 窗口大小建议 2000*1200
+- mindmap/mainmap.html 窗口大小建议 1280*560
+
+#### 运行截图配置
 
 - 将 Code/config_example.json，改为 config.json
 
@@ -25,3 +27,5 @@
 - 若需添加图标样式、导航颜色组合、用户名列表
   - 按照 options.json 中原有的数据添加或修改即可
   - 添加的图标，需要将图标文件放入 Code/icons 
+
+#### 主思维导图配置
