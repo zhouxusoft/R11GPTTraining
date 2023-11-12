@@ -4,7 +4,8 @@
 
 #### 软件外观框架
 
-- 窗口大小建议1280*720
+- Code/main.html 窗口大小建议 1280*720
+- mindmap/d3.html 窗口大小建议 2000*1200
 
 - 将 Code/config_example.json，改为 config.json
 
