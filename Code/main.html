@@ -141,8 +141,8 @@
         fetch('./config.json')
             .then(response => response.json())
             .then(data => {
-                modulelist = data.module_list
-                softname = data.soft_name
+                modulelist = data.moduleList
+                softname = data.name
                 topnavcolor = data.top_nav_color
                 leftnavcolor = data.left_nav_color
                 menuicon = data.menu_icon

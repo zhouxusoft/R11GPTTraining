@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MainMap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 1280px;
+            height: 560px;
+            /* border: 2px solid steelblue;
+            border-radius: 0.25rem; */
+            position: relative;
+        }
+
+        .soft_name {
+            background-color: white;
+            padding: 5px;
+            width: 200px;
+            min-height: 60px;
+            height: fit-content;
+            border: 2px solid steelblue;
+            color: steelblue;
+            border-radius: 0.25rem;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 530px;
+            top: 231px;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .purpose {
+            width: 150px;
+            height: 150px;
+            border-top: 2px solid steelblue;
+            color: steelblue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: top;
+            position: absolute;
+            left: 772px;
+            top: 157px;
+            transform: rotate(-45deg);
+        }
+
+        .purpose_text {
+            background-color: white;
+            padding: 8px;
+            width: 400px;
+            min-height: 80px;
+            height: fit-content;
+            border: 2px solid steelblue;
+            color: steelblue;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 846px;
+            top: 80px;
+        }
+
+        .target {
+            width: 150px;
+            height: 150px;
+            border-bottom: 2px solid steelblue;
+            color: steelblue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: end;
+            position: absolute;
+            left: 773px;
+            top: 227px;
+            transform: rotate(45deg);
+        }
+
+        .target_text {
+            background-color: white;
+            padding: 8px;
+            width: 400px;
+            min-height: 80px;
+            height: fit-content;
+            border: 2px solid steelblue;
+            color: steelblue;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 846px;
+            top: 360px;
+        }
+
+        .main {
+            width: 150px;
+            height: 150px;
+            border-top: 2px solid steelblue;
+            color: steelblue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: top;
+            position: absolute;
+            left: 351px;
+            top: 157px;
+            transform: rotate(45deg);
+        }
+
+        .main_text {
+            background-color: white;
+            padding: 8px;
+            width: 400px;
+            min-height: 80px;
+            height: fit-content;
+            border: 2px solid steelblue;
+            color: steelblue;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 8px;
+            top: 80px;
+        }
+
+        .tech {
+            width: 150px;
+            height: 150px;
+            border-bottom: 2px solid steelblue;
+            color: steelblue;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: end;
+            position: absolute;
+            left: 351px;
+            top: 227px;
+            transform: rotate(-45deg);
+        }
+
+        .tech_text {
+            background-color: white;
+            padding: 8px;
+            width: 400px;
+            min-height: 80px;
+            height: fit-content;
+            border: 2px solid steelblue;
+            color: steelblue;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 8px;
+            top: 360px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="soft_name"></div>
+        <div class="purpose">开发目的</div>
+        <div class="target">目标用户</div>
+        <div class="main">主要功能</div>
+        <div class="tech">技术特点</div>
+        <div class="purpose_text"></div>
+        <div class="target_text"></div>
+        <div class="main_text"></div>
+        <div class="tech_text"></div>
+    </div>
+
+    <script>
+        const soft_name = document.getElementsByClassName("soft_name")[0]
+        const purpose_text = document.getElementsByClassName("purpose_text")[0]
+        const target_text = document.getElementsByClassName("target_text")[0]
+        const main_text = document.getElementsByClassName("main_text")[0]
+        const tech_text = document.getElementsByClassName("tech_text")[0]
+        fetch('./config.json')
+            .then(response => response.json())
+            .then(data => {
+                softname = data.name
+                purpose = data.purpose
+                target = data.target
+                main = data.main
+                tech = data.tech
+                setData()
+            })
+            .catch(error => {
+                console.error('读取配置文件时出错:', error);
+            })
+        function setData() {
+            soft_name.innerHTML = softname
+            purpose_text.innerHTML = purpose
+            target_text.innerHTML = target
+            main_text.innerHTML = main
+            tech_text.innerHTML = tech
+        }
+    </script>
+</body>
+
+</html>
