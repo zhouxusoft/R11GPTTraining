@@ -46,7 +46,6 @@
 
         .menulist {
             height: 91vh;
-
             overflow: auto;
         }
 
@@ -138,6 +137,7 @@
         let leftnavcolor = ''
         let menuiconfilename = ''
         let username = ''
+        let usericon = ''
         fetch('./config.json')
             .then(response => response.json())
             .then(data => {
@@ -147,6 +147,7 @@
                 leftnavcolor = data.left_nav_color
                 menuiconfilename = data.menu_icon_file_name
                 username = data.user_info_name
+                usericon = data.user_info_icon
                 setLeftNav()
             })
             .catch(error => {
@@ -195,9 +196,11 @@
             const nav = document.getElementsByClassName("nav")[0]
             const leftnav = document.getElementsByClassName("leftnav")[0]
             const userinfoname = document.getElementsByClassName("userinfoname")[0]
+            const userinfoicon = document.getElementsByClassName("userinfoicon")[0]
             nav.style.backgroundColor = topnavcolor
             leftnav.style.backgroundColor = leftnavcolor
             userinfoname.innerHTML = username
+            userinfoicon.src = `./icons/${usericon}`
             const styleElement = document.createElement('style');
             const cssRule = `.active { background-color: ${topnavcolor};}
                              .menuitem:hover { background-color: ${topnavcolor};}`
