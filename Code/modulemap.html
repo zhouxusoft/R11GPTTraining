@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModuleMap</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 1280px;
+            height: 720px;
+            border: 1px solid;
+            position: relative;
+            color: steelblue;
+            font-size: 20px;
+        }
+
+        .soft_name {
+            background-color: white;
+            padding: 10px;
+            width: 228px;
+            min-height: 90px;
+            height: fit-content;
+            border: 2px solid;
+            border-radius: 0.25rem;
+            display: flex;
+            text-align: center;
+            align-items: center;
+            position: absolute;
+            left: 512px;
+            top: 300px;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 99;
+        }
+
+        .purpose {
+            width: 150px;
+            height: 150px;
+            border-top: 2px solid;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: top;
+            position: absolute;
+            left: 772px;
+            top: 107px;
+            transform: rotate(-45deg);
+        }
+
+        .purpose_text {
+            background-color: white;
+            padding: 8px;
+            width: 400px;
+            min-height: 80px;
+            height: fit-content;
+            border: 2px solid;
+            border-radius: 0.25rem;
+            display: flex;
+            align-items: center;
+            position: absolute;
+            left: 846px;
+            top: 30px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="soft_name">电子图书设计系统</div>
+    </div>
+
+    <script>
+        const container = document.getElementsByClassName("container")[0]
+        const soft_name = document.getElementsByClassName("soft_name")[0]
+        soft_name.addEventListener('click', function () {
+            location.href = './main.html'
+        })
+        fetch('./config.json')
+            .then(response => response.json())
+            .then(data => {
+                softname = data.name
+                color = data.top_nav_color
+                setData()
+            })
+            .catch(error => {
+                console.error('读取配置文件时出错:', error);
+            })
+        function setData() {
+            soft_name.innerHTML = softname
+            container.style.color = color
+        }
+    </script>
+</body>
+
+</html>
