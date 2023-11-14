@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./modules/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        pre {
+            width: 1200px;
+        }
+    </style>
+</head>
+
+<body>
+    <pre class="mermaid">
+        graph LR
+            A[软件名称] --- M1[模块1]
+            A --- M2[模块2]
+            A --- M3[模块3]
+            A --- M4[模块4]
+            A --- M5[模块5]
+            A --- M6[模块6]
+            A --- M7[模块7]
+            A --- M8[模块8]
+            A --- M9[模块9]
+            A --- M10[模块10]
+
+            M1 --- D1[模块描述1]
+            M2 --- D2[模块描述2]
+            M3 --- D3[模块描述3]
+            M4 --- D4[模块描述4]
+            M5 --- D5[模块描述5]
+            M6 --- D6[模块描述6]
+            M7 --- D7[模块描述7]
+            M8 --- D8[模块描述8]
+            M9 --- D9[模块描述9]
+            M10 --- D10[模块描述10]
+
+            M11[模块11] --- A
+            M12[模块12] --- A
+            M13[模块13] --- A
+            M14[模块14] --- A
+            M15[模块15] --- A
+            M16[模块16] --- A
+            M17[模块17] --- A
+            M18[模块18] --- A
+            M19[模块19] --- A
+            M20[模块20] --- A
+
+            D11[模块描述11] --- M11
+            D12[模块描述12] --- M12
+            D13[模块描述13] --- M13
+            D14[模块描述14] --- M14
+            D15[模块描述15] --- M15
+            D16[模块描述16] --- M16
+            D17[模块描述17] --- M17
+            D18[模块描述18] --- M18
+            D19[模块描述19] --- M19
+            D20[模块描述20] --- M20
+    </pre>
+
+    <script type="module">
+        mermaid.initialize({ startOnLoad: true })
+    </script>
+</body>
+
+</html>

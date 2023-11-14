@@ -1,5 +1,6 @@
 import json
 import random
+import re
 
 '''
     随机获取各种样式
