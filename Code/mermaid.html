@@ -80,6 +80,10 @@
 
     <script type="module">
         mermaid.initialize({ startOnLoad: true })
+        const mermaidDiv = document.getElementsByClassName("mermaid")[0]
+        mermaidDiv.addEventListener('click', function () {
+            location.href = './index.html'
+        })
     </script>
 </body>
 

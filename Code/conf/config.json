@@ -86,9 +86,9 @@
     "target": "教育培训领域的学生、教师和自学者，以及其他有学习需求的个人群体。",
     "main": "软件主要功能包括智能推荐、个性化学习路径规划、知识图谱构建、学习资源管理、情感识别等，帮助用户更高效地学习和成长。",
     "tech": "采用深度学习、自然语言处理、群智算法等技术，实现个性化推荐、学习路径规划、情感识别等功能，提升用户学习体验和效果。",
-    "top_nav_color": "#003366",
-    "left_nav_color": "#6699CC",
+    "top_nav_color": "#6A5ACD",
+    "left_nav_color": "#9370DB",
     "menu_icon": "menu-4.svg",
-    "user_info_name": "Gpt4Fun",
-    "user_info_icon": "user-7.svg"
+    "user_info_name": "星河行",
+    "user_info_icon": "user-2.svg"
 }
