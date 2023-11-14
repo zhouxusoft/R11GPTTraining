@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>MainMap</title>
-    <style>
-        body {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   MindMap
+  </title>
+  <style>
+   body {
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -16,9 +17,7 @@
             align-items: center;
         }
 
-        .color {
-            color: steelblue;
-        }
+        .color{ color: #003366;}
 
         .container {
             width: 1280px;
@@ -163,27 +162,43 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
-    </style>
-</head>
-
-<body>
-    <div class="container color">
-        <div class="soft_name"></div>
-        <div class="purpose">开发目的</div>
-        <div class="target">目标用户</div>
-        <div class="main">主要功能</div>
-        <div class="tech">技术特点</div>
-        <div class="purpose_text"></div>
-        <div class="target_text"></div>
-        <div class="main_text"></div>
-        <div class="tech_text"></div>
-    </div>
-    <script>
-        const soft_name = document.getElementsByClassName("soft_name")[0]
+  </style>
+ </head>
+ <body>
+  <div class="container color">
+   <div class="soft_name">
+    基于神经网络和群智算法的智能学习系统
+   </div>
+   <div class="purpose">
+    开发目的
+   </div>
+   <div class="target">
+    目标用户
+   </div>
+   <div class="main">
+    主要功能
+   </div>
+   <div class="tech">
+    技术特点
+   </div>
+   <div class="purpose_text">
+    为学生、教师和自学者提供个性化、智能化的学习支持和服务，提高学习效率和成果。
+   </div>
+   <div class="target_text">
+    教育培训领域的学生、教师和自学者，以及其他有学习需求的个人群体。
+   </div>
+   <div class="main_text">
+    软件主要功能包括智能推荐、个性化学习路径规划、知识图谱构建、学习资源管理、情感识别等，帮助用户更高效地学习和成长。
+   </div>
+   <div class="tech_text">
+    采用深度学习、自然语言处理、群智算法等技术，实现个性化推荐、学习路径规划、情感识别等功能，提升用户学习体验和效果。
+   </div>
+  </div>
+  <script>
+   const soft_name = document.getElementsByClassName("soft_name")[0]
         soft_name.addEventListener('click', function () {
             location.href = './mermaid.html'
         })
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>

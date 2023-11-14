@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <style>
-        body {
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   基于神经网络和群智算法的智能学习系统
+  </title>
+  <style>
+   body {
             margin: 0;
             padding: 0;
             height: 100vh;
@@ -17,10 +18,11 @@
             width: 100%;
             height: 10vh;
             min-height: 60px;
-            background-color: #24648F;
             display: flex;
             align-items: center;
         }
+
+        .topcolor{ background-color: #003366;}
 
         .softnametitle {
             display: flex;
@@ -41,9 +43,10 @@
             width: 16vw;
             max-width: 400px;
             min-width: 150px;
-            background-color: #6290AF;
             height: 91vh;
         }
+
+        .leftcolor{ background-color: #6699CC;}
 
         .menulist {
             height: 91vh;
@@ -104,56 +107,42 @@
             margin-right: 0.25vw;
             color: rgb(220, 220, 220);
         }
-        
+
         .userinfodown {
             margin-right: 1vw;
             width: 16px;
         }
-    </style>
-</head>
-
-<body>
-    <div class="nav">
-        <div class="softnametitle"></div>
-        <div class="userinfo">
-            <div class="userinfoname">Admin</div>
-            <img src="./icons/user-down.svg" class="userinfodown">
-            <img src="./icons/user-0.svg" class="userinfoicon">
-        </div>
+  </style>
+ </head>
+ <body>
+  <div class="nav topcolor">
+   <div class="softnametitle">
+    基于神经网络和群智算法的智能学习系统
+   </div>
+   <div class="userinfo">
+    <div class="userinfoname">
+     Gpt4Fun
     </div>
-    <div class="container">
-        <div class="leftnav">
-            <div class="menulist">
-            </div>
-        </div>
-        <div class="mainmodule">
-            <iframe src="./html/0.html" frameborder="0" class="mainmodulepage"></iframe>
-        </div>
+    <img class="userinfodown" src="./icons/user-down.svg"/>
+    <img class="userinfoicon" src="./icons/user-0.svg"/>
+   </div>
+  </div>
+  <div class="container">
+   <div class="leftnav leftcolor">
+    <div class="menulist">
     </div>
-
-    <script>
-        let modulelist = []
-        let softname = ''
-        let topnavcolor = ''
-        let leftnavcolor = ''
-        let menuicon = ''
-        let username = ''
-        let usericon = ''
-        fetch('./config.json')
-            .then(response => response.json())
-            .then(data => {
-                modulelist = data.moduleList
-                softname = data.name
-                topnavcolor = data.top_nav_color
-                leftnavcolor = data.left_nav_color
-                menuicon = data.menu_icon
-                username = data.user_info_name
-                usericon = data.user_info_icon
-                setLeftNav()
-            })
-            .catch(error => {
-                console.error('读取配置文件时出错:', error)
-            })
+   </div>
+   <div class="mainmodule">
+    <iframe class="mainmodulepage" frameborder="0" src="./html/0.html">
+    </iframe>
+   </div>
+  </div>
+  <script>
+   let modulelist = [{'name': '智能推荐', 'desc': '基于个人喜好和学习情况，为用户推荐个性化学习资源'}, {'name': '知识图谱', 'desc': '建立用户知识体系，呈现知识点间的关联和深度'}, {'name': '学习路径规划', 'desc': '根据用户学习目标和已有知识，制定个性化的学习路径和计划'}, {'name': '智能测试', 'desc': '根据用户学习情况调整题目难度，动态生成适合的测试题'}, {'name': '学习成效评估模块', 'desc': '评估用户学习成果，为用户提供个性化的学习反馈和建议'}, {'name': '学习社区模块', 'desc': '提供学习交流和互助平台，促进用户间的学习分享和合作'}, {'name': '学习记录分析', 'desc': '分析用户学习过程和成果，为用户提供学习行为数据的可视化分析'}, {'name': '情感识别', 'desc': '识别用户学习过程中的情感变化，为用户提供情感化的辅助与引导'}, {'name': '学习动态提醒', 'desc': '基于用户学习进度和模式，智能生成学习提醒和激励动态'}, {'name': '学习资源管理', 'desc': '整合各种学习资源，提供个性化推荐、筛选和管理功能'}, {'name': '多维度知识检索', 'desc': '支持用户通过不同维度进行知识检索，提供更多元化的学习资源'}, {'name': '学习成绩预测', 'desc': '通过算法预测用户的学习成绩，帮助用户制定学习计划'}, {'name': '学习游戏化', 'desc': '将学习内容转化为游戏化元素，提高用户学习的趣味性和参与度'}, {'name': '智能笔记', 'desc': '支持用户记录学习笔记，提供智能整理和检索功能'}, {'name': '学习目标管理', 'desc': '帮助用户设定学习目标，并进行有效的管理和跟踪'}, {'name': '学习社交网络分析', 'desc': '分析用户在学习社交网络中的影响力和交互模式'}, {'name': '多模态学习支持', 'desc': '支持文字、图片、音频、视频等多种学习方式，提供全方位的学习支持'}, {'name': '情境化学习模拟', 'desc': '提供真实场景的学习模拟，促进用户在特定情境下的学习体验'}, {'name': '个性化学习报告', 'desc': '生成用户个性化的学习报告，展示学习成绩和成长轨迹'}, {'name': '智能学习日历', 'desc': '智能规划用户学习日程，提供个性化的学习时间安排'}]
+        let menuicon = 'menu-4.svg'
+        let usericon = 'user-7.svg'
+        let topnavcolor = '#003366'
+        setLeftNav()
         function setLeftNav() {
             for (let i = 0; i < modulelist.length; i++) {
                 if (modulelist[i].name.endsWith('模块')) {
@@ -165,8 +154,6 @@
             softnametitle.addEventListener('click', function () {
                 location.href = './mindmap.html'
             })
-            document.title = softname
-            softnametitle.innerHTML = softname
             menulist.innerHTML = ''
             menulist.innerHTML += '<div class="whitebox"></div>'
             for (let i = 0; i < modulelist.length; i++) {
@@ -193,6 +180,8 @@
                 location.hash = '#page=0'
             } else if (location.hash == '#page=20') {
                 location.href = './mindmap.html'
+            } else if (location.hash == '#page=21') {
+                location.href = './mermaid.html'
             }
             currentpage = location.hash.split('=')[1]
             mainmodulepage.src = `./html/${currentpage}.html`
@@ -200,13 +189,7 @@
                 menuitem[currentpage].classList.remove('active')
             }
             menuitem[currentpage].classList.add('active')
-            const nav = document.getElementsByClassName("nav")[0]
-            const leftnav = document.getElementsByClassName("leftnav")[0]
-            const userinfoname = document.getElementsByClassName("userinfoname")[0]
             const userinfoicon = document.getElementsByClassName("userinfoicon")[0]
-            nav.style.backgroundColor = topnavcolor
-            leftnav.style.backgroundColor = leftnavcolor
-            userinfoname.innerHTML = username
             userinfoicon.src = `./icons/${usericon}`
             const styleElement = document.createElement('style')
             const cssRule = `.active { background-color: ${topnavcolor};}
@@ -214,7 +197,6 @@
             styleElement.appendChild(document.createTextNode(cssRule))
             document.head.appendChild(styleElement)
         }
-    </script>
-</body>
-
+  </script>
+ </body>
 </html>
