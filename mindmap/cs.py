@@ -1,21 +1,14 @@
-import networkx as nx
-import matplotlib.pyplot as plt
+with open('mermaid.html', 'r', encoding='utf-8') as file:
+    html_code = file.read()
 
-# 创建一个空的图形
-G = nx.Graph()
+with open('config.json', 'r', encoding='utf-8') as f:
+    data = json.load(f)
 
-# 添加节点，你可以添加任意类型的节点，数字，字符，甚至自定义的对象。
-G.add_node(1)
-G.add_node('a')
-G.add_nodes_from([2, 3])
+softname = data['name']
 
-# 添加边，边是连接两个节点的线段。
-G.add_edge(1, 2)
-G.add_edge('a', 3)
-G.add_edges_from([(1, 3), (2, 'a')])
+html_code = html_code.replace('A[软件名称]', f'A[{softname}]')
 
-# 画图
-nx.draw(G, with_labels=True)
+print(html_code)
 
-# 显示图形
-plt.show()
+for i in range(0, len(data['moduleList'])):
+    pass
